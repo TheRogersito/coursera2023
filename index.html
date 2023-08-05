@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="utf-8">
         <title>
             La pàgina del Rogeret
@@ -8,10 +9,58 @@
     </head>
     <body>
         <p>Holabolaefefe</p>
-        <div>L'element div és un element de bloc, és a dir que genera una nova línea</div>
-        <div>Hola sóc un altre div</div>
-        <span>L'element span és un element de línea, no genera una nova línea quan és generat</span>
-        <span>Sóc un segon span, demostro que el span funciona com hem definit abans</span>
-        <a href="shit">emmet</a>
+        <div>
+            <div>L'element div és un element de bloc, és a dir que genera una nova línea</div>
+            <div>Hola sóc un altre div</div>
+            <span>L'element span és un element de línea, no genera una nova línea quan és generat</span>
+            <span>Sóc un segon span, demostro que el span funciona com hem definit abans</span>
+            <a href="shit">emmet</a>
+        </div>
+        <div>
+            <h1>Els headings són per a determinar títols i subtítols, s'escriuen amb h1, h2, h3...</h1>
+            <h2>Hola sóc un h2</h2>
+            <h3>Hola sóc un h3</h3>
+            <h4>Hola sóc un h4</h4>
+            <h5>Hola sóc un h5</h5>
+            <h6>Hola sóc un h6</h6>
+            <header>
+                Es fa servir header per a indicar el "cap" de la pàgina, aquí estaria mal posat
+                <nav>'nav' Sol contenir els links del "cap" de la pàgina</nav>
+            </header>
+            <section>Sol utilitzar-se section per a definir seccions de la pàgina, poden contenir articles i altres sections
+                <article>Exemple d'article 1</article>
+                <article>Exemple d'article 2</article>
+                <article>Exemple d'article 3</article>
+            </section>
+            <aside>Es sol fer servir aside per a contenir informació relacionada amb la principal però no és el contingut important</aside>
+            <footer>footer és el "peu" de la plana</footer>
+        </div>
+        <div>
+            <h2>LListes</h2>
+            <ul>
+                <li>Per a fer una llista hem de fer un element 'ul' que englobi tots els cosa de la llista i fer un element 'li' per cada cosa de la llista</li>
+                <li>Cosa 1</li>
+                <li>Cosa 2</li>
+                <li>La cosa 3 té diverses coses
+                    <ol>
+                        <li>Per a fer una llista ordenada enlloc de posar 'ul' posem 'ol'</li>
+                        <li>Subtema 3.1</li>
+                        <li>Subtema 3.2</li>
+                        <li>Subtema 3.3</li>
+                    </ol>
+                </li>
+                <li>Cosa 4</li>
+            </ul>
+        </div>
+        <div>
+            <p>Hi ha diversos caràcters que hem d'evitar alhora d'escriure contingut en html, serien &lt; &gt; i &amp;</p>
+            <p>Per a poder-los expressar hem de posar les expressions &amp;lt; &amp;gt; i &amp;amp; respectivament</p>
+            <p>Altres caràcters que es poden expressar amb aquest mètode serien aquests</p>
+            <ul>
+                <li>Copyright &copy; &amp;copy;</li>
+                <li>Espais que no es trenquen '&nbsp;' &amp;nbsp;</li>
+                <li>Cometes &quot; &amp;quot;</li>
+            </ul>
+        </div>
     </body>
 </html>
