@@ -8,7 +8,7 @@
         </title>
     </head>
     <body>
-        <p>Holabolaefefe</p>
+        <p id="title">Holabolaefefe</p>
         <div>
             <div>L'element div és un element de bloc, és a dir que genera una nova línea</div>
             <div>Hola sóc un altre div</div>
@@ -61,6 +61,23 @@
                 <li>Espais que no es trenquen '&nbsp;' &amp;nbsp;</li>
                 <li>Cometes &quot; &amp;quot;</li>
             </ul>
+        </div>
+        <div>
+            <h1>Enllaços</h1>
+            <p>Per a crear links ho fem amb l'element 'a' que tingui un atribut href tenint un link com a valor</p>
+            <p>Es fa així: <a href="https://www.google.com">sóc un link que et porta a google</a></p>
+            <p>Si posem l'atribut target="_blank" es fa que la nova plana es carregui en una pestanya nova, així no perdem el que teniem abans</p>
+            <a href="https://www.google.com" target="_blank">També porto a google però en una pestanya nova</a>
+            <p>Per últim podem fer links que vagin a una secció de la plana, hem de fer que el link del href sigui un #idDelElement</p>
+            <a href="#title">Hola, jo porto al títol de la plana</a>
+        </div>
+        <div>
+            <h1>Imatges</h1>
+            <p>Podem incloure imatges amb l'element img que tingui l'atribut src amb el nom de l'imatge</p>
+            <img src="morgana.webp" height="200px">
+            <p>No cal tenir les imatges desades, podem posar un enllaç de l'imatge al src i funciona igual</p>
+            <img src="https://static.wikia.nocookie.net/megamitensei/images/3/33/MorganaPQ2.png/revision/latest?cb=20180901210700" height="200px">
+            <p>És recomenable definir width i height als 'img' per a reservar l'espai si no es carreguen les imatges</p>
         </div>
     </body>
 </html>
