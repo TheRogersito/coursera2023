@@ -8,14 +8,37 @@
         </title>
     </head>
     <body>
-        <p id="title">Holabolaefefe</p>
+        <h1 id="title">Índex</h1>
+        <div id="index">
+            <ul>
+                <li><a href="#partHtml" class="indexButton">HTML</a></li>
+                <ol>
+                    <li><a href="#divSpan" class="indexButton">Div i Span</a></li>
+                    <li><a href="#headings" class="indexButton">Headings</a></li>
+                    <li><a href="#elementsDiversos" class="indexButton">Elements diversos</a></li>
+                    <li><a href="#llistes" class="indexButton">Llistes</a></li>
+                    <li><a href="#caracters" class="indexButton">Caràcters especials</a></li>
+                    <li><a href="#enllaços" class="indexButton">Enllaços</a></li>
+                    <li><a href="#imatges" class="indexButton">Imatges</a></li>
+                </ol>
+                <li><a href="#partCss" class="indexButton">CSS</a></li>
+                <ol>
+                    <li><a href="#sintaxiCss" class="indexButton">Sintaxi Css</a></li>
+                    <li><a href="#selectors" class="indexButton">Selectors</a></li>
+                    <li><a href="#pseudoSelectors" class="indexButton">PseudoSelectors</a></li>
+                </ol>
+            </ul>
+        </div>
+        <h1 id="partHtml">HTML</h1>
+        <h2 id="divSpan">Div i Span</h2>
         <div>
             <div>L'element div és un element de bloc, és a dir que genera una nova línea</div>
             <div>Hola sóc un altre div</div>
             <span>L'element span és un element de línea, no genera una nova línea quan és generat</span>
             <span>Sóc un segon span, demostro que el span funciona com hem definit abans</span>
-            <a href="shit">emmet</a>
+            <a href="#title">emmet</a>
         </div>
+        <h2 id="headings">Headings</h2>
         <div>
             <h1>Els headings són per a determinar títols i subtítols, s'escriuen amb h1, h2, h3...</h1>
             <h2>Hola sóc un h2</h2>
@@ -23,20 +46,21 @@
             <h4>Hola sóc un h4</h4>
             <h5>Hola sóc un h5</h5>
             <h6>Hola sóc un h6</h6>
-            <header>
-                Es fa servir header per a indicar el "cap" de la pàgina, aquí estaria mal posat
-                <nav>'nav' Sol contenir els links del "cap" de la pàgina</nav>
-            </header>
-            <section>Sol utilitzar-se section per a definir seccions de la pàgina, poden contenir articles i altres sections
-                <article>Exemple d'article 1</article>
-                <article>Exemple d'article 2</article>
-                <article>Exemple d'article 3</article>
-            </section>
-            <aside>Es sol fer servir aside per a contenir informació relacionada amb la principal però no és el contingut important</aside>
-            <footer>footer és el "peu" de la plana</footer>
+        <h2 id="elementsDiversos">Elements diversos</h2>
+        <header>
+            Es fa servir header per a indicar el "cap" de la pàgina, aquí estaria mal posat
+            <nav>'nav' Sol contenir els links del "cap" de la pàgina</nav>
+        </header>
+        <section>Sol utilitzar-se section per a definir seccions de la pàgina, poden contenir articles i altres sections
+            <article>Exemple d'article 1</article>
+            <article>Exemple d'article 2</article>
+            <article>Exemple d'article 3</article>
+        </section>
+        <aside>Es sol fer servir aside per a contenir informació relacionada amb la principal però no és el contingut important</aside>
+        <footer>footer és el "peu" de la plana</footer>
         </div>
         <div>
-            <h2>LListes</h2>
+        <h2 id="llistes">Llistes</h2>
             <ul>
                 <li>Per a fer una llista hem de fer un element 'ul' que englobi tots els cosa de la llista i fer un element 'li' per cada cosa de la llista</li>
                 <li>Cosa 1</li>
@@ -52,6 +76,7 @@
                 <li>Cosa 4</li>
             </ul>
         </div>
+        <h2 id="caracters">Caràcters especials</h2>
         <div>
             <p>Hi ha diversos caràcters que hem d'evitar alhora d'escriure contingut en html, serien &lt; &gt; i &amp;</p>
             <p>Per a poder-los expressar hem de posar les expressions &amp;lt; &amp;gt; i &amp;amp; respectivament</p>
@@ -63,7 +88,7 @@
             </ul>
         </div>
         <div>
-            <h1>Enllaços</h1>
+        <h2 id="enllaços">Enllaços</h2>
             <p>Per a crear links ho fem amb l'element 'a' que tingui un atribut href tenint un link com a valor</p>
             <p>Es fa així: <a href="https://www.google.com">sóc un link que et porta a google</a></p>
             <p>Si posem l'atribut target="_blank" es fa que la nova plana es carregui en una pestanya nova, així no perdem el que teniem abans</p>
@@ -71,13 +96,39 @@
             <p>Per últim podem fer links que vagin a una secció de la plana, hem de fer que el link del href sigui un #idDelElement</p>
             <a href="#title">Hola, jo porto al títol de la plana</a>
         </div>
+        <h2 id="imatges">Imatges</h2>
         <div>
-            <h1>Imatges</h1>
             <p>Podem incloure imatges amb l'element img que tingui l'atribut src amb el nom de l'imatge</p>
             <img src="morgana.webp" height="200px">
             <p>No cal tenir les imatges desades, podem posar un enllaç de l'imatge al src i funciona igual</p>
             <img src="https://static.wikia.nocookie.net/megamitensei/images/3/33/MorganaPQ2.png/revision/latest?cb=20180901210700" height="200px">
             <p>És recomenable definir width i height als 'img' per a reservar l'espai si no es carreguen les imatges</p>
         </div>
+        <h1 id="partCss">CSS</h1>
+        <h2 id="sintaxiCss">Sintaxi del CSS</h2>
+            <p>Els elements del css van de la següent manera: "p(que seria l'element o elements afectats){propietat: valor de la propietat;}"</p>
+            <p>Un element de css pot tenir infinites declaracions</p>
+        <h2 id="selectors">Selectors</h2>
+            <p>En el CSS hi ha 3 tipus de selectors:
+                <ul>
+                    <li>Segons element: es posa el tipus d'element al que volem afectar: p{}</li>
+                    <li>Segons class: es posa quan volem afectar a una class concreta: .guapos{}</li>
+                    <li>Segons ID: volem afectar a un sol element que té una id única: #potaDreta{}</li>
+                </ul>
+                <p>També podem fer que un conjunt de declaracions css afectin a classes, elements i ids diferents(com un || al javascript), mira l'exemple: div, .tontos, #potaEsquerre {color: blue;}</p>
+                <p>Podem ser més específics i fer que certes declaracions afectin només a certs tipus d'elements que tinguin certes classes(com un && al javascript), mira l'exemple: p.llestos{font-size:14px;};</p>
+                <p>Altre manera de ser específic és afectar a elements només quan estant dins d'altres elements específics: div > p{}. Això només afectaria a elements p que es trobin directament dins d'un div</p>
+                <p>Podem fer també que l'element sigui afectat quan es trobi dins d'un altre independentment del nivell, mira l'exemple: article p{}</p>
+                <p>Aquestes dues maneres anteriors d'afectar elements específics també poden funcionar amb classes</p>
+            </p>
+        <h2 id="pseudoSelectors">PseudoSelectors</h2>
+            <p>Hi ha selectors del css que només funcionen en certes circumstàncies, són els anomenats pseudoSelectors i alguns d'aquests són</p>
+            <ul>
+                <li>:link afecta a enllaços no visitats</li>
+                <li>:visited afecta a enllaços que ja han sigut visitats</li>
+                <li>:hover afecta a l'element quan el ratolí està a sobre sense clicar</li>
+                <li>:active afecta a l'element quan és clicat(en el moment del clic i es manté si el clic és mantingut)</li>
+                <li>:nth-child(...) entre parèntesi hem de posar un número, aquest serà la posició de l'element afectat(per exemple, div:nth-child(4) {} afectaria al quart div de la pàgina)</li>
+            </ul>
     </body>
 </html>
