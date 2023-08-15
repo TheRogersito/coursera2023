@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: aqua;
+}
+h1{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 30px;
+}
+.caixa{
+    float: left;
+    border: black solid 1px;
+    background-color: grey;
+    margin:2.5%;
+}
+h2{
+    position: relative;
+    text-align: center;
+    border: black solid 1px;
+    width: 30%;
+    left: 70%;
+    margin-top: 0px;
+}
+p{
+    margin-left: 14px;
+    margin-right: 14px;
+}
+@media(min-width: 992px) {
+    .caixa{
+        width:28.33%;
+    }
+}
+@media(min-width: 768px) and (max-width: 991px) {
+    .caixa{
+        width:45%;
+    }
+    #box3{
+        width:95%
+    }
+}
+@media(max-width: 767px) {
+    .caixa{
+        width: 90%;
+    }
+}

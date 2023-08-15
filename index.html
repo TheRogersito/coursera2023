@@ -26,6 +26,15 @@
                     <li><a href="#sintaxiCss" class="indexButton">Sintaxi Css</a></li>
                     <li><a href="#selectors" class="indexButton">Selectors</a></li>
                     <li><a href="#pseudoSelectors" class="indexButton">PseudoSelectors</a></li>
+                    <li><a href="#emlpaCss" class="indexButton">Emplaçament del css</a></li>
+                    <li><a href="#resolucio" class="indexButton">Resolució de conflictes</a></li>
+                    <li><a href="#estilText" class="indexButton">Maneres d'estilar text</a></li>
+                    <li><a href="#caixa" class="indexButton">Caixes</a></li>
+                    <li><a href="#backgroud" class="indexButton">Propietat background</a></li>
+                    <li><a href="#floating" class="indexButton">Posicionat per floating</a></li>
+                    <li><a href="#relative" class="indexButton">Posicionat per relative i absolute</a></li>
+                    <li><a href="#media" class="indexButton">Media queries</a></li>
+                    <li><a href="#responsiu" class="indexButton">Disseny responsiu</a></li>
                 </ol>
             </ul>
         </div>
@@ -130,5 +139,84 @@
                 <li>:active afecta a l'element quan és clicat(en el moment del clic i es manté si el clic és mantingut)</li>
                 <li>:nth-child(...) entre parèntesi hem de posar un número, aquest serà la posició de l'element afectat(per exemple, div:nth-child(4) {} afectaria al quart div de la pàgina)</li>
             </ul>
+        <h2 id="emlpaCss">Emplaçament del css</h2>
+            <p>Existexen 3 maneres d'aplicar el css:</p>
+            <ul>
+                <li>Dins de l'element que volem afectar, com a un atribut style que tingui com a valor la propietat css que volem</li>
+                <li>Com a un element style dins de l'element header, amb totes les propietats que busquem</li>
+                <li>En un arxiu extern posant l'element link dins de head fen una cosa així: &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;. Aquesta és la manera més utilitzada, ja que és la més còmode i ho podem aplicar a diversos html alhora</li>
+            </ul>
+        <h2 id="resolucio">Resolució de conflictes</h2>
+            <p>Hi ha vegades que es pot aplicar dues propietats contradictories que afecten a un element, la resolució de conflictes seria el fer quina propietat queda aplicada sobre l'element, hi ha diverses maneres de fer-ho</p>
+            <ul>
+                <li>Origen: l'última declaració guanya, tenint en compte que el html s'executa de dalt a baix, guanya la que està més a baix</li>
+                <li>Herència: les propietats que es defineixin sobre un element son heretades pels elements dins del primer element. Les propietats definides sobre subelements(un p dins un div, per exemple) guanyen sobre propietats en nivells més alts</li>
+                <li>Especificitat: la propietat més específica guanya. L'especificitat segueix aquest ordre:<ol>
+                    <li>Propietat definida dins el propi element</li>
+                    <li>Propietat que té ID com a target</li>
+                    <li>Propietat que té com a target una classe, pseudo-classe o atribut</li>
+                    <li>Propietat que afecta a un nom d'element</li>
+                </ol></li>
+            </ul>
+            <p>Per acabar, si poses !important al costat d'una propietat, faràs que aquesta propietat tingui més pes que qualsevol altre, però no ho fagis servir gaire que és una merda de mantenir</p>
+        <h2 id="estilText">Maneres d'estilar text</h2>
+            <p>Aquí mirarem maneres de decorar i estilar text</p>
+            <ul>
+                <li>font-family: escull la tipografia del text. Exemple: Times New Roman</li>
+                <li>color: el color del text. Exemple: red, #0066ee</li>
+                <li>font-style: estil del text(cursiva, negreta i tal). Exemple: italic</li>
+                <li>font-weight: nivell de negreta. Exemple: 200, 700, bold</li>
+                <li>font-size: tamany de la lletra. Exemple: 22px, 120%, 2em(aquest em multiplica pel número el tamany que tenia la lletra per defecte)</li>
+                <li>text-transform: Transformació de la lletra. Exemple: capitalize, lowercase</li>
+                <li>text-align: alineació del text. Exemple: justify, center, left</li>
+            </ul>
+        <h2 id="caixa">Les caixes</h2>
+            <p>Les caixes son la manifestació dels elements del html, les més vistes són les div. Aquestes caixes podem modificar-les pel css</p>
+            <p>Maneres de modificar-les serien:</p>
+            <ul>
+                <li>background-color: Modifica el color de fons de l'interior de la caixa</li>
+                <li>padding: és l'espai que separa el contingut de la caixa del seu marge</li>
+                <li>border: el marge de la caixa</li>
+                <li>margin: és l'espai que separa el marge de la caixa amb la resta de contingut de fora</li>
+                <li>width: amplada del contingut de la caixa</li>
+                <li>height: alçada del contingut de la caixa. tant en width com en height podem establir un min i un max si volem que el tamany sigui dinàmic</li>
+                <li>box-sizing: "border-box". Fem que width i height tingui en compte el padding i border. Aquesta propietat no s'hereda, si volem que sigui aplicat a tots els elements hem de posar la propietat a l'element *{}</li>
+                <li>overflow: ajusta el contingut segons el valor, mira els possibles</li>
+                <ul>
+                    <li>visible: fa que el contingut sobresurti</li>
+                    <li>hidden: amaga el contingut que no cap</li>
+                    <li>auto: afegeix una barra de despaçament a la dreta, no es prefereix</li>
+                    <li>scroll: afegeix barres de desplaçament tant verticals com horitzontals, aquest és el pitjor</li>
+                </ul>
+            </ul>
+        <h2 id="background">Propietat background</h2>
+            <p>La propietat background seria el que té de fons un element o la plana en si. Podem posar com a fons un color o una imatge</p>
+            <p>En cas que sigui una imatge, per defecte aquesta es repetirà per a omplir l'element del qual és fons, però podem canviar la manera en la que actua amb la propietat background-repeat</p>
+            <p>Totes les característiques del background es poden definir dins de la propietat background</p>
+        <h2 id="floating">Posicionat per floating</h2>
+            <p>El posicionat per floating és la manera més utilitzada per a posicionar elements. Un cop apliquem un float a un element, passarà a només interactuar amb elements float(dins dels límits d'altres elements que el continguin)</p>
+            <p>Amb float hem de fer que un element floti cap a la dreta o cap a l'esquerra. Amb clear fas ue un element pugui interactuar amb elements float, però fas que aquest element que té clear no tingui altres elements float a la dreta, esquerre o els dos amb both</p>
+        <h2 id="relative">Posicionat per relative i absolute</h2>
+            <p>Abans de parlar del relative o l'absolute, hem de parlar del posicionat estàtic, que és el que hi ha per defecte per tots els elements excepte el html</p>
+            <p>El relative seria com un posicionament float però pot interactuar amb els elements que no són float. Aquest element conserva l'espai ocupat de la seva posició original</p>
+            <p>L'absolute és semblant al relative, però aquest depèn completament de l'element que el conté i en l'ambient de la plana, es mou amb l'element en el que resideix. Per a que absolute fagi cas, hem de fer que l'element que el conté tingui una posició absolute o relative</p>
+        <h2 id="media">Media queries</h2>
+            <p>Les media queries són les maneres d'adaptar l'estil depenent del tamany de la pantalla</p>
+            <p>Es defineixen amb @media(condició que aplica si és true){}. Normalmet es posa com a condició max-width i min-width</p>
+            <p>Podem aplicarmés d'una condició posant 'and' o ','(la , seria un or), separant cada condició dins del seu propi parèntesi</p>
+            <p>Procura no crear conflictes entre condicions. Normalment es fa 3 espais de condicions per tamany:</p>
+            <ul>
+                <li>Gran: (min-width: 1200px)</li>
+                <li>Mitjà: (min-width: 992px) and (max-width: 1199px)</li>
+                <li>Petit: (max-width: 991px)</li>
+            </ul>
+        <h2 id="responsiu">Disseny responsiu</h2>
+            <p>El disseny responsiu és l'idea d'aplicar diferents tamanys en els elements depenent del tamany de la pantalla. Normalment es fa imaginant la plana en 12 columnes i fer que els elements s'adaptin al tamany d'aquestes</p>
+            <p>Una manera de fer-ho, és fer classes predeterminades al css i després posar els elements necessaris a la classe depenent necessitat, un exemple d'això ho veuràs més tard amb el bootstrap</p>
+            <p>Recorda que per a fer que els telèfons mòbils s'adaptin al disseny responsiu sense tocar els pebrots, hem de posar el metatag &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+        <h2 id="bootstrap">Bootstrap</h2>
+            <p>El bootstrap és una llibreria d'arxius que es pot descarregar gratuïtament. Conté arxius css i javascript i serverix per a assistir a la web que es pretengui crear; tenen, entre d'altres, classes predeterminades de les que hem parlat abans al disseny responsiu, com les 'col-md-4', 'col-lg-2'...</p>
+            <p>Els arxius bootstrap es poden descarregar aquí: <a href="https://getbootstrap.com/">Bootstrap</a></p>
+            <p>Per a fer servir el sistema de cel·les del bootstrap, el que hem vist abans de les 12 columnes, hem de definir un element amb la class container, després un element a dins amb la class row i finalment a dins ja podem definir un element amb la class de divisió per columnes que ens interessa</p>
     </body>
 </html>
