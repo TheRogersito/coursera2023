@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
         <meta charset="utf-8">
         <title>
             La pàgina del Rogeret
@@ -35,6 +36,11 @@
                     <li><a href="#relative" class="indexButton">Posicionat per relative i absolute</a></li>
                     <li><a href="#media" class="indexButton">Media queries</a></li>
                     <li><a href="#responsiu" class="indexButton">Disseny responsiu</a></li>
+                    <li><a href="#bootstrap" class="indexButton">Bootstrap</a></li>
+                </ol>
+                <li><a href="#partJs" class="indexButton">Javascript</a></li>
+                <ol>
+                    <li><a href="#emplaJs" class="indexButton">Emplaçament Javascript</a></li>
                 </ol>
             </ul>
         </div>
@@ -218,5 +224,12 @@
             <p>El bootstrap és una llibreria d'arxius que es pot descarregar gratuïtament. Conté arxius css i javascript i serverix per a assistir a la web que es pretengui crear; tenen, entre d'altres, classes predeterminades de les que hem parlat abans al disseny responsiu, com les 'col-md-4', 'col-lg-2'...</p>
             <p>Els arxius bootstrap es poden descarregar aquí: <a href="https://getbootstrap.com/">Bootstrap</a></p>
             <p>Per a fer servir el sistema de cel·les del bootstrap, el que hem vist abans de les 12 columnes, hem de definir un element amb la class container, després un element a dins amb la class row i finalment a dins ja podem definir un element amb la class de divisió per columnes que ens interessa</p>
+        <h1 id="partJs">Javascript</h1>
+        <h2 id="emplaJs">Emplaçament del Javascript</h2>
+            <p>El javascript es pot implementar de dues maneres, i en ambdòs casos ha d'estar dins de l'element head:</p>
+            <ul>
+                <li>En un arxiu extern posant &lt;script src="script.js"&gt;</li>
+                <li>Dins del propi html posant el codi del javascript dins d'un element script</li>
+            </ul>
     </body>
 </html>
