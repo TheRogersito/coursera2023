@@ -1,0 +1,48 @@
+body{
+    box-sizing:border-box;
+    background-color: lightskyblue;
+}
+h1{
+    text-align: center;
+    font-size: 56px;
+}
+#completa{
+    position:absolute;
+    height:500px;
+    left:30%;
+    width: 40%;
+}
+.caixa{
+    width:32%;
+    aspect-ratio: 1/1;
+    border: solid 1px black;
+    float:left;
+    background-color: aliceblue;
+}
+.imatge{
+    width: 98%;
+    height: 93.5%;
+}
+#tornbox{
+    aspect-ratio: 11/16;
+    width: 12%;
+    position:absolute;
+    left:9%;
+    top:30%;
+    text-align: center;
+    font-size: 26px;
+}
+#imatgeTorn{
+    aspect-ratio: 1/1;
+}
+@media (max-width: 700px){
+    #completa{
+        width:90%;
+        left:5%;
+    }
+    #tornbox{
+        position:relative;
+        width: 33.3333%;
+        left: 33.3333%;
+    }
+}
