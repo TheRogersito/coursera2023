@@ -23,8 +23,10 @@ h1{
     background-color: aliceblue;
 }
 .imatge{
-    width: 98%;
-    height: 93.5%;
+    width: 100%;
+    height: fit-content;
+    aspect-ratio: 1/1;
+    display: block;
 }
 #tornbox{
     aspect-ratio: 11/16;
@@ -69,7 +71,7 @@ h1{
         position:absolute;
         left:60%;
         padding:7%;
-        font-size: 18px;
+        font-size: 14px;
         text-align: center;
         width:30%;
     }
