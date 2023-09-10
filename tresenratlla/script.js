@@ -30,3 +30,15 @@ let comproWin = function(){
         alert("Ha guanyat el gatet content");
     }
 }
+let reinicia = function(){
+    compro = {};
+    document.getElementById('box1').innerHTML = " ";
+    document.getElementById('box2').innerHTML = " ";
+    document.getElementById('box3').innerHTML = " ";
+    document.getElementById('box4').innerHTML = " ";
+    document.getElementById('box5').innerHTML = " ";
+    document.getElementById('box6').innerHTML = " ";
+    document.getElementById('box7').innerHTML = " ";
+    document.getElementById('box8').innerHTML = " ";
+    document.getElementById('box9').innerHTML = " ";
+}
