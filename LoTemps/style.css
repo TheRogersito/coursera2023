@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: chartreuse;
+}
+.caixaTemps{
+    border:solid black 1px;
+    padding: 25px;
+    margin:40px;
+    float:left;
+}
+.titolTemps{
+    text-align:center
+}

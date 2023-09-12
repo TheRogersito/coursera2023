@@ -1,15 +1,20 @@
 let torn;
 let compro = {};
 let mark = function(ere){
-    if(torn){
-        document.getElementById(ere).innerHTML = '<img class="imatge" src="mare.jpg">';
-        torn = false;
-        compro[ere] = 1;
+    if (compro[ere] == 0 || compro[ere] == 1){
+        return;
     }
     else{
-        document.getElementById(ere).innerHTML = '<img class="imatge" src="morgana.jpg">';
-        torn = true;
-        compro[ere] = 0;
+        if(torn){
+            document.getElementById(ere).innerHTML = '<img class="imatge" src="mare.jpg">';
+            torn = false;
+            compro[ere] = 1;
+        }
+        else{
+            document.getElementById(ere).innerHTML = '<img class="imatge" src="morgana.jpg">';
+            torn = true;
+            compro[ere] = 0;
+        }
     }
     indicaTorn();
     setTimeout(comproWin,10)

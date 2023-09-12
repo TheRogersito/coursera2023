@@ -1,0 +1,1 @@
+https://api.open-meteo.com/v1/forecast?latitude=41.5905&longitude=2.5812&hourly=temperature_2m,relativehumidity_2m,dewpoint_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,weathercode,pressure_msl,surface_pressure,cloudcover,cloudcover_low,cloudcover_mid,cloudcover_high,visibility&timezone=Europe%2FBerlin
