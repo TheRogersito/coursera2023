@@ -8,39 +8,82 @@
     </head>
     <body>
         <h1>El temps a canet</h1>
-        <div id="forecastDia">
+        <div id="caixaTempsAvui" class="ultraCaixa">
             <h2>El temps avui</h2>
-            <div id="caixaTempsAvui">
-                <div id="caixaTempsAvui1" class="caixaTemps">
-                    <div id="titolTempsAvui1" class="titolTemps"><p>Ara Mateix</p></div>
-                    <div id="fotoTempsAvui1" class="fotoTemps"><img src="nuvol.png"></div>
-                    <div id="tempTempsAvui1" class="tempTemps"><p id="hora1temp"></p></div>
-                </div>
-                <div id="caixaTempsAvui2" class="caixaTemps">
-                    <div id="titolTempsAvui2" class="titolTemps">Ara Mateix</div>
-                    <div id="fotoTempsAvui2" class="fotoTemps"><img src="nuvol.png"></div>
-                    <div id="tempTempsAvui2" class="tempTemps"><p id="hora2temp"></p></div>
-                </div>
-                <div id="caixaTempsAvui3" class="caixaTemps">
-                    <div id="titolTempsAvui3" class="titolTemps">Ara Mateix</div>
-                    <div id="fotoTempsAvui3" class="fotoTemps"><img src="nuvol.png"></div>
-                    <div id="tempTempsAvui3" class="tempTemps"><p id="hora3temp"></p></div>
-                </div>
-                <div id="caixaTempsAvui4" class="caixaTemps">
-                    <div id="titolTempsAvui4" class="titolTemps">Ara Mateix</div>
-                    <div id="fotoTempsAvui4" class="fotoTemps"><img src="nuvol.png"></div>
-                    <div id="tempTempsAvui4" class="tempTemps"><p id="hora4temp"></p></div>
-                </div>
-                <div id="caixaTempsAvui5" class="caixaTemps">
-                    <div id="titolTempsAvui5" class="titolTemps">Ara Mateix</div>
-                    <div id="fotoTempsAvui5" class="fotoTemps"><img src="nuvol.png"></div>
-                    <div id="tempTempsAvui5" class="tempTemps"><p id="hora5temp"></p></div>
-                </div>
-                <div id="caixaTempsAvui6" class="caixaTemps">
-                    <div id="titolTempsAvui6" class="titolTemps">Ara Mateix</div>
-                    <div id="fotoTempsAvui6" class="fotoTemps"><img src="nuvol.png"></div>
-                    <div id="tempTempsAvui6" class="tempTemps"><p id="hora6temp"></p></div>
-                </div>
+            <div id="caixaTempsAvui1" class="caixaTemps">
+                <div id="titolTempsAvui1" class="titolTemps"><p>Ara Mateix</p></div>
+                <div id="fotoTempsAvui1" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsAvui1" class="tempTemps"><p id="hora1temp"></p></div>
+                <div id="humiTempsAvui1" class="humiTemps"><p id="hora1humi"></p></div>
+            </div>
+            <div id="caixaTempsAvui2" class="caixaTemps">
+                <div id="titolTempsAvui2" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsAvui2" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsAvui2" class="tempTemps"><p id="hora2temp"></p></div>
+                <div id="humiTempsAvui2" class="humiTemps"><p id="hora2humi"></p></div>
+            </div>
+            <div id="caixaTempsAvui3" class="caixaTemps">
+                <div id="titolTempsAvui3" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsAvui3" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsAvui3" class="tempTemps"><p id="hora3temp"></p></div>
+                <div id="humiTempsAvui3" class="humiTemps"><p id="hora3humi"></p></div>
+            </div>
+            <div id="caixaTempsAvui4" class="caixaTemps">
+                <div id="titolTempsAvui4" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsAvui4" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsAvui4" class="tempTemps"><p id="hora4temp"></p></div>
+                <div id="humiTempsAvui4" class="humiTemps"><p id="hora4humi"></p></div>
+            </div>
+            <div id="caixaTempsAvui5" class="caixaTemps">
+                <div id="titolTempsAvui5" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsAvui5" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsAvui5" class="tempTemps"><p id="hora5temp"></p></div>
+                <div id="humiTempsAvui5" class="humiTemps"><p id="hora5humi"></p></div>
+            </div>
+            <div id="caixaTempsAvui6" class="caixaTemps">
+                <div id="titolTempsAvui6" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsAvui6" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsAvui6" class="tempTemps"><p id="hora6temp"></p></div>
+                <div id="humiTempsAvui6" class="humiTemps"><p id="hora6humi"></p></div>
+            </div>
+        </div>
+        <div id="caixaTempsSetmana" class="ultraCaixa">
+            <h2>El temps Setmana</h2>
+            <div id="caixaTempsSetmana1" class="caixaTemps">
+                <div id="titolTempsSetmana1" class="titolTemps"><p>Avui</p></div>
+                <div id="fotoTempsSetmana1" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsSetmana1" class="tempTemps"><p id="dia1temp"></p></div>
+                <div id="humiTempsSetmana1" class="humiTemps"><p id="dia1humi"></p></div>
+            </div>
+            <div id="caixaTempsSetmana2" class="caixaTemps">
+                <div id="titolTempsSetmana2" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsSetmana2" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsSetmana2" class="tempTemps"><p id="dia2temp"></p></div>
+                <div id="humiTempsSetmana2" class="humiTemps"><p id="dia2humi"></p></div>
+            </div>
+            <div id="caixaTempsSetmana3" class="caixaTemps">
+                <div id="titolTempsSetmana3" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsSetmana3" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsSetmana3" class="tempTemps"><p id="dia3temp"></p></div>
+                <div id="humiTempsSetmana3" class="humiTemps"><p id="dia3humi"></p></div>
+            </div>
+            <div id="caixaTempsSetmana4" class="caixaTemps">
+                <div id="titolTempsSetmana4" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsSetmana4" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsSetmana4" class="tempTemps"><p id="dia4temp"></p></div>
+                <div id="humiTempsSetmana4" class="humiTemps"><p id="dia4humi"></p></div>
+            </div>
+            <div id="caixaTempsSetmana5" class="caixaTemps">
+                <div id="titolTempsSetmana5" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsSetmana5" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsSetmana5" class="tempTemps"><p id="dia5temp"></p></div>
+                <div id="humiTempsSetmana5" class="humiTemps"><p id="dia5humi"></p></div>
+            </div>
+            <div id="caixaTempsSetmana6" class="caixaTemps">
+                <div id="titolTempsSetmana6" class="titolTemps">Ara Mateix</div>
+                <div id="fotoTempsSetmana6" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+                <div id="tempTempsSetmana6" class="tempTemps"><p id="dia6temp"></p></div>
+                <div id="humiTempsSetmana6" class="humiTemps"><p id="dia6humi"></p></div>
             </div>
         </div>
     </body>

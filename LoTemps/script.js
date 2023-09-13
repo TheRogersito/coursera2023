@@ -4,50 +4,80 @@ function Get(yourUrl){
     Httpreq.send(null);
     return Httpreq.responseText;          
 }
-let forecast = JSON.parse(Get(`https://api.open-meteo.com/v1/forecast?latitude=41.5905&longitude=2.5812&hourly=temperature_2m,relativehumidity_2m,dewpoint_2m,apparent_temperature,precipitation_probability,precipitation,rain,showers,weathercode,pressure_msl,surface_pressure,cloudcover,cloudcover_low,cloudcover_mid,cloudcover_high,visibility&timezone=Europe%2FBerlin`));
+let forecast = JSON.parse(Get(`https://api.open-meteo.com/v1/forecast?latitude=41.5905&longitude=2.5812&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,precipitation,rain,showers,weathercode&timezone=Europe%2FBerlin`));
 let now = Date.now();
 let time = new Date(now);
+let recursiveDia = 0;
+let recursiveSetmana= 0;
 
 let foto = function(place, hour){
     switch(forecast.hourly.weathercode[hour]){
         case 0:
-            document.getElementById(place).innerHTML = "<img src='sol.png'>";
+            document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='sol.png'>";
             break;
         case 1:
         case 2:
-            document.getElementById(place).innerHTML = "<img src='solnuvol.png'>";
+            document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='solnuvol.png'>";
             break;
         case 3:
-            document.getElementById(place).innerHTML = "<img src='nuvol.png'>";
+            document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='nuvol.png'>";
             break;
         case 51:
         case 53:
         case 55:
-            document.getElementById(place).innerHTML = "<img src='plou.png'>";
+            document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='plou.png'>";
             break;
         default:
-            document.getElementById(place).innerHTML = "<img src='sol.png'>";
+            document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='sol.png'>";
             break;
     }
 }
 
-
 window.onload = function() {
-    document.getElementById('titolTempsAvui2').innerHTML = `<p>${time.getHours()+2}:${time.getMinutes()}</p>`
-    document.getElementById('titolTempsAvui3').innerHTML = `<p>${time.getHours()+4}:${time.getMinutes()}</p>`
-    document.getElementById('titolTempsAvui4').innerHTML = `<p>${time.getHours()+6}:${time.getMinutes()}</p>`
-    document.getElementById('titolTempsAvui5').innerHTML = `<p>${time.getHours()+8}:${time.getMinutes()}</p>`
-    document.getElementById('titolTempsAvui6').innerHTML = `<p>${time.getHours()+10}:${time.getMinutes()}</p>`
-    document.getElementById('hora1temp').innerHTML = `<p>${forecast.hourly.temperature_2m[0]} C&deg;</p>`;
-    document.getElementById('hora2temp').innerHTML = `<p>${forecast.hourly.temperature_2m[2]} C&deg;</p>`;
-    document.getElementById('hora3temp').innerHTML = `<p>${forecast.hourly.temperature_2m[4]} C&deg;</p>`;
-    document.getElementById('hora4temp').innerHTML = `<p>${forecast.hourly.temperature_2m[6]} C&deg;</p>`;
-    document.getElementById('hora5temp').innerHTML = `<p>${forecast.hourly.temperature_2m[8]} C&deg;</p>`;
-    document.getElementById('hora6temp').innerHTML = `<p>${forecast.hourly.temperature_2m[10]} C&deg;</p>`;
-    foto("fotoTempsAvui1", 0);
-    foto("fotoTempsAvui2", 2);
-    foto("fotoTempsAvui3", 4);
-    foto("fotoTempsAvui4", 6);
-    foto("fotoTempsAvui5", 8);
-    foto("fotoTempsAvui6", 10);
+    for(let i=1;i<=6;i++){
+        if(i>=2){
+            document.getElementById(`titolTempsAvui${i}`).innerHTML = `<p>${time.getHours()+recursiveDia}:${time.getMinutes()}</p>`
+            switch(time.getDay()+i-2){
+                case 0:
+                case 7:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Dilluns</p>";
+                    break;
+                case 1:
+                case 8:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Dimarts</p>";
+                    break;
+                case 2:
+                case 9:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Dimecres</p>";
+                    break;
+                case 3:
+                case 10:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Dijous</p>";
+                    break;
+                case 4:
+                case 11:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Divendres</p>";
+                    break;
+                case 5:
+                case 12:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Dissabte</p>";
+                    break;
+                case 6:
+                case 13:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Diumenge</p>";
+                    break;
+                default:
+                    document.getElementById(`titolTempsSetmana${i}`).innerHTML = "<p>Didsfdsfdsfs</p>";
+                    break;
+            }
+        }
+        document.getElementById(`hora${i}temp`).innerHTML = `<p>${forecast.hourly.temperature_2m[recursiveDia]} C&deg;</p>`;
+        document.getElementById(`hora${i}humi`).innerHTML = `<p>${forecast.hourly.relativehumidity_2m[recursiveDia]} %</p>`;
+        document.getElementById(`dia${i}temp`).innerHTML = `<p>${forecast.hourly.temperature_2m[recursiveSetmana]} C&deg;</p>`;
+        document.getElementById(`dia${i}humi`).innerHTML = `<p>${forecast.hourly.relativehumidity_2m[recursiveSetmana]} %</p>`;
+        foto(`fotoTempsAvui${i}`, recursiveDia);
+        foto(`fotoTempsSetmana${i}`, recursiveSetmana);
+        recursiveDia = recursiveDia+2;
+        recursiveSetmana = recursiveSetmana+24;
+    }
 }
