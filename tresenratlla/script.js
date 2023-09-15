@@ -6,12 +6,12 @@ let mark = function(ere){
     }
     else{
         if(torn){
-            document.getElementById(ere).innerHTML = '<img class="imatge" src="mare.jpg">';
+            document.getElementById(ere).innerHTML = '<img class="imatge" src="gat.jpg">';
             torn = false;
             compro[ere] = 1;
         }
         else{
-            document.getElementById(ere).innerHTML = '<img class="imatge" src="morgana.jpg">';
+            document.getElementById(ere).innerHTML = '<img class="imatge" src="senyor.jpg">';
             torn = true;
             compro[ere] = 0;
         }
@@ -21,10 +21,10 @@ let mark = function(ere){
 }
 let indicaTorn = function(){
     if(torn){
-        document.getElementById('tornde').innerHTML = '<img class="imatge" id="imatgeTorn" src="mare.jpg">';
+        document.getElementById('tornde').innerHTML = '<img class="imatge" id="imatgeTorn" src="gat.jpg">';
     }
     else{
-        document.getElementById('tornde').innerHTML = '<img class="imatge" id="imatgeTorn" src="morgana.jpg">';
+        document.getElementById('tornde').innerHTML = '<img class="imatge" id="imatgeTorn" src="senyor.jpg">';
     }
 }
 let comproWin = function(){
@@ -37,13 +37,7 @@ let comproWin = function(){
 }
 let reinicia = function(){
     compro = {};
-    document.getElementById('box1').innerHTML = " ";
-    document.getElementById('box2').innerHTML = " ";
-    document.getElementById('box3').innerHTML = " ";
-    document.getElementById('box4').innerHTML = " ";
-    document.getElementById('box5').innerHTML = " ";
-    document.getElementById('box6').innerHTML = " ";
-    document.getElementById('box7').innerHTML = " ";
-    document.getElementById('box8').innerHTML = " ";
-    document.getElementById('box9').innerHTML = " ";
+    for(let i=1;i<=9;i++){
+        document.getElementById(`box${i}`).innerHTML = " ";
+    }
 }
