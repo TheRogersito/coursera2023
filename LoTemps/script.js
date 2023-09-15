@@ -7,8 +7,8 @@ function Get(yourUrl){
 let forecast = JSON.parse(Get(`https://api.open-meteo.com/v1/forecast?latitude=41.5905&longitude=2.5812&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,precipitation,rain,showers,weathercode&timezone=Europe%2FBerlin`));
 let now = Date.now();
 let time = new Date(now);
-let recursiveDia = 0;
-let recursiveSetmana= 0;
+let recursiveDia = time.getHours();
+let recursiveSetmana= 12;
 
 let foto = function(place, hour){
     switch(forecast.hourly.weathercode[hour]){
@@ -20,11 +20,16 @@ let foto = function(place, hour){
             document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='solnuvol.png'>";
             break;
         case 3:
+        case 45:
+        case 48:
             document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='nuvol.png'>";
             break;
         case 51:
         case 53:
         case 55:
+        case 61:
+        case 63:
+        case 65:
             document.getElementById(place).innerHTML = "<img class='imatgeTemps' src='plou.png'>";
             break;
         default:
@@ -34,9 +39,9 @@ let foto = function(place, hour){
 }
 
 window.onload = function() {
-    for(let i=1;i<=6;i++){
+    for(let i=1;i<=7;i++){
         if(i>=2){
-            document.getElementById(`titolTempsAvui${i}`).innerHTML = `<p>${time.getHours()+recursiveDia}:${time.getMinutes()}</p>`
+            document.getElementById(`titolTempsAvui${i}`).innerHTML = `<p>${recursiveDia<24?recursiveDia:recursiveDia-24}:00</p>`
             switch(time.getDay()+i-2){
                 case 0:
                 case 7:
