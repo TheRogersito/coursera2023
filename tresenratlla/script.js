@@ -1,31 +1,21 @@
 let torn;
 let compro = {};
+let cgat = '<img class="imatge" src="gat.jpg">';
+let csenyor = '<img class="imatge" src="senyor.jpg">';
 let mark = function(ere){
     if (compro[ere] == 0 || compro[ere] == 1){
         return;
     }
     else{
-        if(torn){
-            document.getElementById(ere).innerHTML = '<img class="imatge" src="gat.jpg">';
-            torn = false;
-            compro[ere] = 1;
-        }
-        else{
-            document.getElementById(ere).innerHTML = '<img class="imatge" src="senyor.jpg">';
-            torn = true;
-            compro[ere] = 0;
-        }
+        document.getElementById(ere).innerHTML = torn ? cgat : csenyor;
+        torn = !torn;
+        compro[ere] = torn ? 0 : 1;
     }
     indicaTorn();
     setTimeout(comproWin,10)
 }
 let indicaTorn = function(){
-    if(torn){
-        document.getElementById('tornde').innerHTML = '<img class="imatge" id="imatgeTorn" src="gat.jpg">';
-    }
-    else{
-        document.getElementById('tornde').innerHTML = '<img class="imatge" id="imatgeTorn" src="senyor.jpg">';
-    }
+        document.getElementById('tornde').innerHTML = torn ? cgat : csenyor;
 }
 let comproWin = function(){
     if(compro.box1 == 0 && compro.box2 == 0 && compro.box3 == 0 || compro.box4 == 0 && compro.box5 == 0 && compro.box6 == 0 || compro.box7 == 0 && compro.box8 == 0 && compro.box9 == 0 || compro.box1 == 0 && compro.box4 == 0 && compro.box7 == 0 || compro.box2 == 0 && compro.box5 == 0 && compro.box8 == 0 || compro.box3 == 0 && compro.box6 == 0 && compro.box9 == 0 || compro.box1 == 0 && compro.box5 == 0 && compro.box9 == 0 || compro.box3 == 0 && compro.box5 == 0 && compro.box7 == 0){
