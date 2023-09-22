@@ -8,7 +8,8 @@ let forecast = JSON.parse(Get(`https://api.open-meteo.com/v1/forecast?latitude=4
 let now = Date.now();
 let time = new Date(now);
 let recursiveDia = time.getHours();
-let recursiveSetmana= 27;
+let recursiveSetmana= 28;
+let recur = 1;
 
 let foto = function(place, hour){
     switch(forecast.hourly.weathercode[hour]){
@@ -39,10 +40,24 @@ let foto = function(place, hour){
 }
 
 window.onload = function() {
+    for (let r=1;r<=6;r++){
+        let all = ``;
+        for(let s=0;s<6;s++){
+            let info=`<div id="caixaTempsSetmana${recur}" class="caixaTemps">
+            <div id="titolTempsSetmana${recur}" class="titolTemps"><p>Avui</p></div>
+            <div id="fotoTempsSetmana${recur}" class="fotoTemps"><img class="imatgeTemps" src="nuvol.png"></div>
+            <div id="tempTempsSetmana${recur}" class="tempTemps"><p id="dia${recur}temp"></p></div>
+            <div id="humiTempsSetmana${recur}" class="humiTemps"><p id="dia${recur}humi"></p></div>
+            </div>`
+            all=all+info;
+            recur++;
+        }
+        document.getElementById(`ultraCaixaTempsSetmana${r}`).innerHTML = all
+    }
     for(let i=1;i<=6;i++){
         if(i>=2){
             document.getElementById(`titolTempsAvui${i}`).innerHTML = `<p>${recursiveDia<24?recursiveDia:recursiveDia-24}:00</p>`
-            switch(time.getDay()+i-1){
+            switch(time.getDay()+i-2){
                 case 0:
                 case 7:
                     document.getElementById(`titolGeneralSetmana${i}`).innerHTML = "<p>Dilluns</p>";
@@ -81,9 +96,7 @@ window.onload = function() {
         foto(`fotoTempsAvui${i}`, recursiveDia);
         recursiveDia = recursiveDia+2;
     }
-    for(let i=1;i<=36;i++){
-        let hora = 3+4*(i-1);
-        document.getElementById(`titolTempsSetmana${i}`).innerHTML = `<p>${hora>24?hora-24*Math.floor((i-1)/6):hora}:00</p>`
+    for(let i=1;i<=12;i++){
         document.getElementById(`dia${i}temp`).innerHTML = `<p>${forecast.hourly.temperature_2m[recursiveSetmana]} C&deg;</p>`;
         document.getElementById(`dia${i}humi`).innerHTML = `<p>${forecast.hourly.relativehumidity_2m[recursiveSetmana]} %</p>`;
         foto(`fotoTempsSetmana${i}`, recursiveSetmana);
