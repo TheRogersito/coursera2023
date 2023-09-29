@@ -5,8 +5,7 @@ function Get(yourUrl){
     return Httpreq.responseText;          
 }
 let forecast = JSON.parse(Get(`https://api.open-meteo.com/v1/forecast?latitude=41.5905&longitude=2.5812&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,precipitation,rain,showers,weathercode&timezone=Europe%2FBerlin`));
-let now = Date.now();
-let time = new Date(now);
+let time = new Date(Date.now());
 let recursiveDia = time.getHours();
 let recursiveSetmana= 27;
 
@@ -37,8 +36,7 @@ let foto = function(place, hour){
             break;
     }
 }
-
-window.onload = function() {
+let carregat = function(){
     for(let i=1;i<=6;i++){
         if(i>=2){
             document.getElementById(`titolTempsAvui${i}`).innerHTML = `<p>${recursiveDia<24?recursiveDia:recursiveDia-24}:00</p>`
@@ -88,5 +86,27 @@ window.onload = function() {
         document.getElementById(`dia${i}humi`).innerHTML = `<p>${forecast.hourly.relativehumidity_2m[recursiveSetmana]} %</p>`;
         foto(`fotoTempsSetmana${i}`, recursiveSetmana);
         recursiveSetmana = recursiveSetmana+4;
+        }
     }
+window.onload = function() {
+    carregat();
 }
+let nouLloc = function(lat, lon, nom){
+    forecast = JSON.parse(Get(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,precipitation,rain,showers,weathercode&timezone=Europe%2FBerlin`));
+    time = new Date(Date.now());
+    recursiveDia = time.getHours();
+    recursiveSetmana= 27;
+    document.getElementById(`localitzacio`).innerHTML = nom
+    carregat();
+}
+let coll = document.getElementsByClassName("collapsible");
+
+let collapse = function(){
+    for(e of coll){
+        if (e.style.display === "block") {
+            e.style.display = "none";
+          } else {
+            e.style.display = "block";
+          }
+    }
+};

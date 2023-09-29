@@ -9,8 +9,55 @@ body{
     background-color: #24241C;
     color:beige;
 }
+header{
+    background-color: #ecd622;
+    color:#24241C;
+    margin-top:0;
+    height:100px;
+}
 h1{
-    margin-left:1%
+    margin-top:0;
+    margin-left:4.5%;
+    padding-top:31.5px;
+    float:left;
+}
+#collapbutton{
+    float:right;
+    width:13%;
+    aspect-ratio: 1/1;
+    display:none;
+    margin:3.8%;
+    background-color: #ecd622;
+    border:0;
+    border-radius:3px;
+}
+#llocs{
+    display:block;
+    font-size: 0;
+    background-color: #ecd622;
+}
+.buttlloc{
+    background-color: #ecd622;
+    font-size: 24px;
+    padding-left:2.75%;
+    padding-right:2.75%;
+    border:0;
+    margin:0;
+}
+.buttlloc:hover, #collapbutton:hover{
+	background-color: #dcc612;
+}
+.buttlloc:active, #collapbutton:active{
+	background-color: #ccb602;
+}
+.buttlloc:focus{
+    outline: 0;
+}
+#localitzacio{
+    font-size:2em;
+    font-weight: bold;
+    text-align:center;
+    margin:35px;
 }
 .ultraCaixa{
     clear:left;
@@ -35,6 +82,9 @@ h1{
 .titolTemps{
     text-align:center
 }
+p{
+    margin-top:10px;
+}
 .tempTemps{
     float:left;
 }
@@ -42,8 +92,24 @@ h1{
     float:right;
 }
 @media (max-width: 700px){
+    header{
+        height:80px;
+    }
     h1{
-        margin-left:5%
+        font-size:1.6em;
+        padding-top:25px;
+    }
+    #collapbutton{
+        display:block;
+    }
+    .collapsible{
+        display:none;
+        transition: max-height 0.2s ease-out;
+        margin-bottom:4px;
+    }
+    .buttlloc{
+        width:100%;
+        text-align: center;
     }
     .ultraCaixa{
         margin:5%;

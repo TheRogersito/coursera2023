@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>El temps a canet</title>
+        <title>El temps a uns quants llocs</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>El temps a canet</h1>
+        <header>
+            <h1>Com està la meteorologia?</h1>
+            <button id="collapbutton" onclick="collapse()"><i class="material-icons">menu</i></button>
+        </header>
+        <div id="llocs">
+            <button class="buttlloc collapsible" onclick="nouLloc('41.5905','2.5812','Canet de mar')">Canet de mar</button>
+            <button class="buttlloc collapsible" onclick="nouLloc('41.3773','2.0881','Esplugues de Llobregat')">Esplugues de Llobregat</button>
+            <button class="buttlloc collapsible" onclick="nouLloc('41.3839','2.0676','Sant Just Desvern')">Sant Just Desvern</button>
+            <button class="buttlloc collapsible" onclick="nouLloc('41.6018','2.6174','Sant Pol de mar')">Sant Pol de mar</button>
+            <button class="buttlloc collapsible" onclick="nouLloc('41.3436','2.0366','Sant Boi de Llobregat')">Sant Boi de Llobregat</button>
+            <button class="buttlloc collapsible" onclick="nouLloc('41.4911','2.1408','Cerdanyola')">Cerdanyola</button>
+        </div>
+        <div id="localitzacio">Canet de mar</div>
         <div id="UltraCaixaTempsAvui" class="ultraCaixa">
             <h2 id="titolGeneralAvui">El temps avui</h2>
             <div id="caixaTempsAvui1" class="caixaTemps">
