@@ -1,0 +1,5 @@
+let superDice=[`<div class="dice face1"><span class="dot"></span></div>`,`<div class="dice face2"><span class="dot"></span><span class="dot"></span></div>`,`<div class="dice face3"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>`,`<div class="dice face4"><div class="column"><span class="dot"></span><span class="dot"></span></div><div class="column"><span class="dot"></span><span class="dot"></span></div></div>`,`<div class="dice face5"><div class="column"><span class="dot"></span><span class="dot"></span></div><div class="column"><span class="dot"></span></div><div class="column"><span class="dot"></span><span class="dot"></span></div></div>`,`<div class="dice face6"><div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="column"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>`
+];
+let tirar = function(){
+    document.getElementById("imatgeDau").innerHTML = superDice[Math.floor(Math.random()*6)]
+}
