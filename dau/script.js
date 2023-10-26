@@ -24,4 +24,5 @@ let collapse = function(){
 let canviarBoto = function(length){
     document.getElementById("subtitol").innerHTML = `Dau de ${length} cares`
     document.getElementById("caixaBoto").innerHTML = `<button id="boto" onclick="tirar(${length})">Tira el dau</button>`;
+    collapse();
 }
