@@ -100,7 +100,6 @@ let nouLloc = function(lat, lon, nom){
     carregat();
 }
 let coll = document.getElementsByClassName("collapsible");
-
 let collapse = function(){
     for(e of coll){
         if (e.style.display === "block") {

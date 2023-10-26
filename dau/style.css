@@ -1,5 +1,6 @@
 *{
     margin:0;
+    box-sizing: border-box;
 }
 body{
     background-color: #000000;
@@ -17,26 +18,62 @@ header{
 }
 h1{
     font-size: 2.5em;
+    width: max-content;
+    margin:auto;
+}
+header p{
+    width: max-content;
+    margin:auto;
+}
+#collapbutton{
+    background-color: #202020;
+    position: relative;
+    float:right;
+    width:13%;
+    aspect-ratio: 1/1;
+    margin:2% 3.8% 0 3.8%;
+    border:0;
+    border-radius:3px;
+}
+i{
+    color:#F0F0F0;
+}
+#buttmaster{
+    background-color: #202020; 
+}
+.buttdau{
+    display:none;
+    background-color: #202020;
+    color:#F0F0F0;
+    font-size: 24px;
+    padding:0 2.75% 5px 2.75%;
+    border:0;
+    margin:0;
+    width:100%;
+    text-align: center;
+}
+.buttdau:active, #collapbutton:active{
+	background-color: #101010;
 }
 main{
     text-align: center;
 }
 h2{
-    margin:15px;
+    margin: 15px auto 15px auto;
     color: #F0F0F0;
     font-size: 1.9em;
 }
 .dice {  
-    padding: 2vmax;  
+    padding: 8.5vi;  
     background-color: #101010;  
-    width: 65%;  
+    width: 60%;  
     aspect-ratio: 1/1;  
     border-radius: 10%;
     margin: auto;
 }
 .dot {
     display: block;
-    width: 5vmax;
+    width: 10vi;
     aspect-ratio: 1/1;
     border-radius: 50%;
     background-color:#F0F0F0;
@@ -46,7 +83,7 @@ h2{
     justify-content: center;
     align-items: center;
 }
-.face2, .face3, .face4, .face5, .face6{
+.face2, .face3, .face4, .face5, .face6, .face7, .face8{
     display: flex;
     justify-content : space-between;
 }
@@ -62,12 +99,12 @@ h2{
 .face3 .dot:nth-of-type(3) {
     align-self: flex-end;
 }
-.face4 .column, .face5 .column, .face6 .column{
+.face4 .column, .face5 .column, .face6 .column, .face7 .column, .face8 .column{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.face5 .column:nth-of-type(2) {
+.face5 .column:nth-of-type(2), .face7 .column:nth-of-type(2) {
     justify-content: center;
 }
 #boto{
@@ -79,4 +116,28 @@ h2{
 }
 #boto:active{
     background-color: #D0D0D0;
+}
+#caixaSo{
+    font-size: 1.75em;
+}
+#caixaSo p{
+    background-color:#F0F0F0;
+    width: max-content;
+    text-align: center;
+    padding:1.5vmax;
+    margin:auto;
+    border: solid 2px rgb(87, 87, 87);
+}
+#checkSo{
+    height:1.5em;
+    width:1.5em;
+}
+@media(min-width: 700px){
+    .dice{
+        width:40%;
+        padding:6vi;
+    }
+    .dot{
+        width:6.5vi;
+    }
 }
