@@ -10,7 +10,7 @@ let tirar = function(length){
 function playsound(){
     let sound = new Audio("pipe.wav");
     let checkbox2 = document.getElementById("checkSoSuau");
-    if(checkbox2.checked){
+    if(!checkbox2.checked){
         sound.volume = 0.3;
     }
     sound.play();
