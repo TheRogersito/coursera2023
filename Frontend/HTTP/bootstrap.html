@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bootstrap</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Llibreries</h1>
+        <p>Abans de veure què és el bootstrap, hem d'entendre el concepte d'una llibreria, que seria un conjunt de codi creat per a ser compartit i que molta gent el fagi servir</p>
+        <p>La llibreria més famosa de css és el Bootsrap, adjuntat a aquesta pàgina per a que es pugui veure de què és capaç, mira el botó d'abaix com a exemple</p>
+        <button type="button" class="btn btn-primary">Botó de prova</button>
+        <p>Aquest botó està estilat fent servir codi del bootstrap, lo únic que hem fet ha sigut aplicar la classe corresponent</p>
+        <h2>Disseny responsiu</h2>
+        <p>El disseny responsiu és l'idea d'adaptar el disseny de la web al tamany de la pantalla, es suporta sobretot amb 3 subidees</p>
+        <ul>
+            <li>Flexible grids: defineix el contingut de la plana en columnes que s'adapten a l'amplada de la pantalla segons percentatge</li>
+            <li>Imatges fluides: consistiria en adaptar el tamany d'una imatge segons l'element que la conté, fent que mai sobresurti</li>
+            <li>Media queries: són selectors especials del css que fan que certes propietats només apliquin quan hi ha cert tamany de pantalla, orientació o relació d'aspecte</li>
+        </ul>
+        <p>Els breakpoints serien punts dels media queries en els quals la web passa d'un estil a un altre</p>
+        <h1>Bootstrap</h1>
+        <p>Per a crear una web senzilla amb el Bootstrap, hem de fer un doc html que tingui com a referència l'arxiu de bootstrap, ja sigi local o online</p>
+        <p>A continuació, hem de fer servir les classes ja definides al bootstrap creant elements amb aquestes classes(com container, row, column...), mira l'exemple</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-9">
+                    <h3>Noms</h3>
+                    <p>Taula</p>
+                    <p>Una cosa plana, 4 potes</p>
+                    <img src="taula.jpg" alt="Taula" class="img-fluid"/>
+                    <p>Cadira</p>
+                    <p>Dues coses planes, 4 potes</p>
+                    <img src="cadira.png" alt="Cadira" class="img img-fluid"/>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <h3>Preus</h3>
+                    <table class="table">
+                        <tr>
+                            <td>Taula</td>
+                            <td>100€</td>
+                        </tr>
+                        <tr>
+                            <td>Cadira</td>
+                            <td>25€</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <h2>Estils al Bootstrap</h2>
+        <p>Hi ha classes del bootstrap dissenyades per a afectar segons disseny responsiu, seguirien aquest criteri</p>
+        <table class="table">
+            <tr>
+                <th>Punt</th>
+                <th>Nom de classe</th>
+                <th>Tamany</th>
+            </tr>
+            <tr>
+                <td>Extra petit</td>
+                <td>xs(per defecte)</td>
+                <td>més petit que 576px</td>
+            </tr>
+            <tr>
+                <td>Petit</td>
+                <td>sm</td>
+                <td>entre 576px i 767px</td>
+            </tr>
+            <tr>
+                <td>Mitjà</td>
+                <td>md</td>
+                <td>entre 768px i 991px</td>
+            </tr>
+            <tr>
+                <td>Gran</td>
+                <td>lg</td>
+                <td>entre 992px i 1199px</td>
+            </tr>
+            <tr>
+                <td>Extra gran</td>
+                <td>xl</td>
+                <td>entre 1200px i 1399px</td>
+            </tr>
+            <tr>
+                <td>Extra extra gran</td>
+                <td>xxl</td>
+                <td>més gran que 1399px</td>
+            </tr>
+        </table>
+        <p>Aquests noms de classes de la taula s'apliquen a les classes seguins aquest exemple: col-sm-4. Després mirem què seria aquest 4</p>
+        <p>El boostrap també té uns colors per defecte depenent de la classe que indiquem. Aquests són anomenars modificadors, i són aquests: primary, secondary, success, info, warning, danger, light i dark. ara veurem un div amb un d'aquests modificadors</p>
+        <div class="alert alert-secondary" role="alert">Alerta amb el modificador secondary</div>
+        <h2>Bootstrap grid</h2>
+        <p>Imagina la plana com un conjunt de 12 columnes. El sistema gri del boostrap fa que certes classes agafin cert número de columnes segons necessitat</p>
+        <p>Seguint l'exemple d'abans, el col-sm-4, faria que la clase agafés 4 columnes de les 12 en les que hem dividit la web amb el sistena grid</p>
+        <p>Per a fer-ho servir, hem de fer primer un div de la classe "container", un altre div a dins amb la classe "row" i al div dins d'aquest ja podem aplicar la classe que utilitza el grid</p>
+        <p>Un exemple molt bo de com funcionaria, seria el contingut de Noms i preus que has vist abans a la web, si la fas més estreta, el contingut canvia de posició</p>
+        <h2>Components del Bootstrap</h2>
+        <p>Podem fer que un div sigui vist com una tarjeta a la web fent servir el conjunt de classes "card" del bootstrap. S'ha de posar la class "card" al div que contingui les coses que volem dins la tarjeta i les classes "card-body", "card-title" i "card-text" on convingui</p>
+        <p>A continuació tens l'enllaç on pots consultar tota la documentació del bootstrap:</p>
+        <a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" class="p-3 text-light bg-primary border border-primary rounded-3" style="text-decoration: none;">Enllaç a documentació del bootstrap</a>
+        <p style="padding-top:14px">Aquí pots mirar tot el que té el bootstrap fàcilment</p>
+        <h2>Altres Llibreries</h2>
+        <p>A part del bootstrap, hi ha altres llibreries de css que es poden utilitzar:</p>
+        <ul>
+            <li>Foundation: és bastant semblant al bootstrap, la diferència més gran és que pot estilar contingut per ser enviat per email</li>
+            <li>Pure.css: No és tan avançat com el bootstrap, el que fa que sigui més ràpid de carregar</li>
+            <li>Tailwind CSS: proveeix un fotimer de classes d'un sol propòsit, el que fa que el disseny de la web sigui ultraflexible. Això però, també fa que el treball en equip sigui més complicat</li>
+            <li>UIKit: té una petita sèrie de components responsius. Bastant simple però en teoria fàcil de fer servir</li>
+            <li>MVP.css: aquesta llibreria no deèn de classes, únicament de les etiquetes HTML. Això fa que la plana web es vegi maca, però no és ni de lluny tan versàtil com les altres</li>
+        </ul>
+    </body>
+</html>
