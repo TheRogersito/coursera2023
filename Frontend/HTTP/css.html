@@ -3,60 +3,74 @@
     <head>
         <title>CSS</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>CSS</h1>
-        <p>El css és per a decorar i estilar la web, se sol aplicar posant les dades del css en un document .css a part</p>
-        <h2>Bloc de declaració</h2>
-        <p>El bloc de declaració és un bloc en el qual posem els estils que volem aplicar i de nom té l'element que rebrà aquest estil, mira l'exemple</p>
-        <p>
-            h2{<br>
-                color: red;<br>
-            }
-        </p>
-        <p>En aquest cas, tots els elements h2 tindrien aplicat l'efecte color:red</p>
-        <h3>Parts del bloc de declaració</h3>
-        <ul>
-            <li>Selector: a l'exemple anterior seria el h2, indica l'element que rebrà els efectes del bloc</li>
-            <li>Declaracions: a l'exemple anterior seria el color:red, però en poden ser més. Cada efecte està composat per una propietat i un valor (propietat color, valor red)</li>
-        </ul>
-        <h2>Tipus de selectors</h2>
-        <p>Podem fer que el css apliqui els estils a més d'un element alhora, per a fer-ho hem de fer servir el selector que ens interessi:</p>
-        <ul>
-            <li>Per etiqueta HTML: posant el nom de l'etiqueta sola, fem que el bloc afecti a totes les etiquetes que tinguin aquest nom, per exemple tots els p: p{}</li>
-            <li>Per classe: podem aplicar una classe a tots els elements HTML que volguem i amb el css seleccionar la classe en concret, per exemple tots el elements de la class caixa: .caixa{}</li>
-            <li>Per ID: les IDs són propietats que només es poden aplicar a un element en concret del HTML, al css podem fer un bloc que només afecti a aquest element, per exemple l'element de id loginDret: #loginDret{}</li>
-            <li>Per combinació: la combinació es fa quan volem que l'efecte s'apliqui a un grup reduït d'una classe, per exemple tots els p de la classe textpetit: p.textpetit{}</li>
-            <li>Per descendència: l'efecte seria aplicat específicament a certs elements dins d'altres elements, per exemple tots els h2 dins de l'element d'id pag4: #pag4 h2</li>
-            <li>Per descendent directe: funciona similar a l'anterior però sense afectar elements més recursius, per exemple tots els p que estiguin directament dins de l'element d'id plana2: #plana2 > p</li>
-            <li>Pseudoclasses: l'efecte seria aplicat depenent d'una acció com passar el ratolí per sobre o fer un clic, per exemple fer un clic a un h1: h1:active{}</li>
-        </ul>
-        <h2>Propietats de color i text</h2>
-        <h3>Color</h3>
-        <p>Per a representar el color hi ha diverses maneres, les veurem per sobre:</p>
-        <ul>
-            <li>RGB(A): nivell de vermell, verd i blau(de 0 a 255), amb un quart número opcional que seria opacitat(de 0 a 1)</li>
-            <li>HSL: nivell de color(0 vermell, 120 verd i 240 blau), saturació(en %) i brillantor(en %)</li>
-            <li>Hexadecimal: semblant al RGB, però representat amb un valor hexadecimal</li>
-            <li>Predefinits: hi ha alguns números per defecte del css, com red, aqua, gold, green, maroon i molts més</li>
-        </ul>
-        <h3>Text</h3>
-        <p>Aquí hi ha alguns exemples de com podem decorar text:</p>
-        <ul>
-            <li>Color: seria el color del text, la propietat es diu "color" i el valor es defineix com hem vist a l'apartat anterior</li>
-            <li>Font: pot definir la font i la mida del text, les propietats es diuen "font-family" per a la font(per exemple Times New Roman) i "font-size" que es defineix numeralment</li>
-            <li>Transform: defineix si el text està en majúscules, minúscules i tal, la propietat es diu "text-transform" i el valor pot ser "uppercase", "lowercase", "capitalize" i "none"</li>
-            <li>Decoration: és per a decorar el text amb un subrallat, la propietat es diu "text-decoration" i pot tenir fins a 4 valors que serien on és la línea(underline, overline o line-through), el seu color, l'estil(solid, double, dotted, dashed o wavy) i gruixudesa, definida amb valor numèric</li>
-        </ul>
-        <h2>Block contra Inline</h2>
-        <p>Els block level elements són elements que ocupen tota l'amplada de la plana, mentre que els inline elements tenen una amplada més reduïda i poden tenir altres elements als costats</p>
-        <p>Alguns block level elements són: div, form, h1, h2, h3, h4...</p>
-        <p>Alguns inline elements són: a, img, input, label, b, i, em, span...</p>
-        <p>Podem canviar la categoria dels elements amb el css, per a fer-ho hem d'aplicar la propietat "display" amb el valor "block" o "inline" segons el que ens interessi</p>
-        <h2>Alineament</h2>
-        <p>Per a alinear text, hem de posar la propietat "text-align" que pot tenir el valor left, right, center o justify</p>
-        <p>Per a alinear un div, hem de fer que el margin sigui auto si el volem centrar o float left o right si el volem a algun costat</p>
+        <div class="container">
+            <div class="row">
+                <h1>CSS</h1>
+                <p>El css és per a decorar i estilar la web, se sol aplicar posant les dades del css en un document .css a part</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Bloc de declaració</h2>
+                    <p>El bloc de declaració és un bloc en el qual posem els estils que volem aplicar i de nom té l'element que rebrà aquest estil, mira l'exemple</p>
+                    <p>
+                        h2{<br>
+                            color: red;<br>
+                        }
+                    </p>
+                    <p>En aquest cas, tots els elements h2 tindrien aplicat l'efecte color:red</p>
+                    <h3>Parts del bloc de declaració</h3>
+                    <ul>
+                        <li>Selector: a l'exemple anterior seria el h2, indica l'element que rebrà els efectes del bloc</li>
+                        <li>Declaracions: a l'exemple anterior seria el color:red, però en poden ser més. Cada efecte està composat per una propietat i un valor (propietat color, valor red)</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Tipus de selectors</h2>
+                    <p>Podem fer que el css apliqui els estils a més d'un element alhora, per a fer-ho hem de fer servir el selector que ens interessi:</p>
+                    <ul>
+                        <li>Per etiqueta HTML: posant el nom de l'etiqueta sola, fem que el bloc afecti a totes les etiquetes que tinguin aquest nom, per exemple tots els p: p{}</li>
+                        <li>Per classe: podem aplicar una classe a tots els elements HTML que volguem i amb el css seleccionar la classe en concret, per exemple tots el elements de la class caixa: .caixa{}</li>
+                        <li>Per ID: les IDs són propietats que només es poden aplicar a un element en concret del HTML, al css podem fer un bloc que només afecti a aquest element, per exemple l'element de id loginDret: #loginDret{}</li>
+                        <li>Per combinació: la combinació es fa quan volem que l'efecte s'apliqui a un grup reduït d'una classe, per exemple tots els p de la classe textpetit: p.textpetit{}</li>
+                        <li>Per descendència: l'efecte seria aplicat específicament a certs elements dins d'altres elements, per exemple tots els h2 dins de l'element d'id pag4: #pag4 h2</li>
+                        <li>Per descendent directe: funciona similar a l'anterior però sense afectar elements més recursius, per exemple tots els p que estiguin directament dins de l'element d'id plana2: #plana2 > p</li>
+                        <li>Pseudoclasses: l'efecte seria aplicat depenent d'una acció com passar el ratolí per sobre o fer un clic, per exemple fer un clic a un h1: h1:active{}</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Propietats de color i text</h2>
+                    <h3>Color</h3>
+                    <p>Per a representar el color hi ha diverses maneres, les veurem per sobre:</p>
+                    <ul>
+                        <li>RGB(A): nivell de vermell, verd i blau(de 0 a 255), amb un quart número opcional que seria opacitat(de 0 a 1)</li>
+                        <li>HSL: nivell de color(0 vermell, 120 verd i 240 blau), saturació(en %) i brillantor(en %)</li>
+                        <li>Hexadecimal: semblant al RGB, però representat amb un valor hexadecimal</li>
+                        <li>Predefinits: hi ha alguns números per defecte del css, com red, aqua, gold, green, maroon i molts més</li>
+                    </ul>
+                    <h3>Text</h3>
+                    <p>Aquí hi ha alguns exemples de com podem decorar text:</p>
+                    <ul>
+                        <li>Color: seria el color del text, la propietat es diu "color" i el valor es defineix com hem vist a l'apartat anterior</li>
+                        <li>Font: pot definir la font i la mida del text, les propietats es diuen "font-family" per a la font(per exemple Times New Roman) i "font-size" que es defineix numeralment</li>
+                        <li>Transform: defineix si el text està en majúscules, minúscules i tal, la propietat es diu "text-transform" i el valor pot ser "uppercase", "lowercase", "capitalize" i "none"</li>
+                        <li>Decoration: és per a decorar el text amb un subrallat, la propietat es diu "text-decoration" i pot tenir fins a 4 valors que serien on és la línea(underline, overline o line-through), el seu color, l'estil(solid, double, dotted, dashed o wavy) i gruixudesa, definida amb valor numèric</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Block contra Inline</h2>
+                    <p>Els block level elements són elements que ocupen tota l'amplada de la plana, mentre que els inline elements tenen una amplada més reduïda i poden tenir altres elements als costats</p>
+                    <p>Alguns block level elements són: div, form, h1, h2, h3, h4...</p>
+                    <p>Alguns inline elements són: a, img, input, label, b, i, em, span...</p>
+                    <p>Podem canviar la categoria dels elements amb el css, per a fer-ho hem d'aplicar la propietat "display" amb el valor "block" o "inline" segons el que ens interessi</p>
+                    <h2>Alineament</h2>
+                    <p>Per a alinear text, hem de posar la propietat "text-align" que pot tenir el valor left, right, center o justify</p>
+                    <p>Per a alinear un div, hem de fer que el margin sigui auto si el volem centrar o float left o right si el volem a algun costat</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

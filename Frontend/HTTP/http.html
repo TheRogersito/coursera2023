@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTTP</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>HTTP</h1>
+                    <p>HTTP és una acció que executa un client cap a un servidor o al revés. Una acció HTTP està composada per el mètode, el recurs o info i la versió. Mira l'exemple: GET /home.html HTTP/1.1</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Mètodes</h2>
+                    <p>El mètode indicaria l'objectiu de l'acció HTTP</p>
+                    <ul>
+                        <li>GET: el client solicita info de la web</li>
+                        <li>POST: el client penja info a la web</li>
+                        <li>PUT: el client modifica info de la web</li>
+                        <li>DELETE: el client esborra info de la web</li>
+                        <li>PATCH: el client modifica un recurs de la web(no s'indica diferència amb el PUT)</li>
+                    </ul>
+                    <p>El recurs seria l'arxiu sobre el qual actuem i la versió és la versió en qüestió del HTTP, que normalment és 1.1 o 2.0</p>
+                    <h2>Codis d'estatus</h2>
+                    <p>Els codis d'estatus són la resposta que dóna el servidor a una acció HTTP, es divideixen en diverses categories, mira-les:</p>
+                    <ol>
+                        <li>1XX: Informació</li>
+                        <ul>
+                            <li>100: El servidor ha rebut els headers i està esperant al body</li>
+                            <li>101: El client ha solicitat canviar protocols i el servidor ha acceptat</li>
+                        </ul>
+                        <li>2XX: Èxit</li>
+                        <ul>
+                            <li>200: L'acció ha tingut complet èxit</li>
+                            <li>201: S'ha creat el recurs que es volia al servidor(per exemple, un nou arxiu)</li>
+                            <li>202: L'acció s'ha acceptat però encara no està completada</li>
+                            <li>204: L'acció s'ha acceptat però no hi ha contingut</li>
+                        </ul>
+                        <li>3XX: Redirecció</li>
+                        <ul>
+                            <li>301: El recurs solicitat s'ha mogut permanentment i serà la solicitud redirigida</li>
+                            <li>302: La solicitud es redirigeix al lloc correcte</li>
+                        </ul>
+                        <li>4XX: Error de client</li>
+                        <ul>
+                            <li>400: Solicitud incorrecte o dades enviades massa grans</li>
+                            <li>401: El client s'ha d'autenticar per a accedir</li>
+                            <li>403: El client no té permisos per a accedir al recurs</li>
+                            <li>404: El recurs solicitat no s'ha trobat</li>
+                            <li>405: El mètode utilitzat no és suportat pel servidor</li>
+                        </ul>
+                        <li>5XX:</li>
+                        <ul>
+                            <li>500: Error genèric del propi servidor, alguna cosa no ha anat bé</li>
+                            <li>502: El servidor web ha rebut una resposta invàlida per part del servidor de l'aplicació</li>
+                            <li>503: El servidor web no pot processar la solicitud</li>
+                        </ul>
+                    </ol>
+                </div>
+                <div class="col-12 col-lg-6">
+                <h2>Headers en solicitud</h2>
+                <p>Els headers són informació que facilita el client sobre si mateix en la acció HTTP, mira l'exemple:</p>
+                <ul class="invisibleDots">
+                    <li>Host: example.com</li>
+                    <li>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:50.0) Gecko/20100101 Firefox/50.0</li>
+                    <li>Accept: */*</li>
+                    <li>Accept-Language: en</li>
+                    <li>Content-type: text/json</li>
+                </ul>
+                <p>Aquest header té aquestes 5 categories, que vindrien a ser: </p>
+                <ul>
+                    <li>Host: especifica des d'on es solicita el recurs</li>
+                    <li>User-Agent: especifica informació de l'aplicació que solicita les dades, sol ser el sistema operatiu, versió i nom de l'aplicació</li>
+                    <li>Accept: indica quin tipus de contingut acceptarà el client</li>
+                    <li>Accept-Language: és l'idioma de preferència del client</li>
+                    <li>Content-type: és el tipus de contingut transmès al request body</li>
+                </ul>
+                    <h2>Body en solicitud</h2>
+                    <p>El request body és el contingut que s'envia quan es fa un PUT o un POST. mira l'exemple:</p>
+                    <ul class="invisibleDots">
+                        <li>PUT /users/1 HTTP/1.1</li>
+                        <li>Host: example.com</li>
+                        <li>Content-type: text/json</li>
+                        <li> </li>
+                        <li>{"key1":"value1"}</li>
+                    </ul>
+                    <h2>Headers en resposta</h2>
+                    <p>Són com els headers en solicitud però en resposta(duh). Aquest cop, n'hi ha 4:</p>
+                    <ul>
+                        <li>Date: indica el moment en el qual s'ha generat la resposta</li>
+                        <li>Server: Descriu el programari del servidor web</li>
+                        <li>Content-Length: és la llargada de la resposta</li>
+                        <li>Content-Type: és el tipus de recurs retornat al client</li>
+                    </ul>
+                    <p>Un header en resposta seria similar a això:</p>
+                    <ul class="invisibleDots">
+                        <li>Date: Fri, 11 Feb 2022 15:00:00 GMT+2</li>
+                        <li>Server: Apache/2.2.14 (Linux)</li>
+                        <li>Content-Length: 84</li>
+                        <li>Content-Type: text/html</li>
+                    </ul>
+                    <h2>Body en resposta</h2>
+                    <p>El body en resposta seria les dades que retorna el servidor al client, així de simple</p>
+                </div>
+                <h2>Altres protocols</h2>
+                <td>A internet hi ha uns quants protocols</td>
+                <table class="table">
+                    <tr>
+                        <td>DHCP</td>
+                        <td>Assigna una IP al client</td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td>tradueix les IPs dels servidors en URLs</td>
+                    </tr>
+                    <tr>
+                        <td>IMAP</td>
+                        <td>Desa els mails del client en un servidor</td>
+                    </tr>
+                    <tr>
+                        <td>SMTP</td>
+                        <td>Permet l'enviament de emails</td>
+                    </tr>
+                    <tr>
+                        <td>POP</td>
+                        <td>Fa el mateix que el IMAP, però esborra els mails un cop el client els ha descarregat</td>
+                    </tr>
+                    <tr>
+                        <td>FTP</td>
+                        <td>Permet l'enviament, la recepció, i el esborrar arxius d'un servidor web des d'un cient</td>
+                    </tr>
+                    <tr>
+                        <td>SSH</td>
+                        <td>És una manera segura de connectar un client amb un servidor</td>
+                    </tr>
+                    <tr>
+                        <td>SFTP</td>
+                        <td>Funciona com el FTP però és segur</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

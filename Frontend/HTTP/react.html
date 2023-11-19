@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bootstrap</title>
+        <title>React</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
@@ -9,18 +9,59 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>React</h1>
-        <h2>Contingut estàtic o dinàmic</h2>
-        <p>El contingut d'una web pot ser estàtic o dinàmic, la diferència seria el com és generat el contingut</p>
-        <p>El contingut estàtic és el contingut que s'envia al client tal qual està desat al servidor</p>
-        <p>El contingut dinàmic és generat en el moment en el que el servidor ha rebut la petició HTTP per part del client, per tant no ha sigut escrit per una persona, sinó autogenerat</p>
-        <p>Aquest contingut és generat internament pel servidor d'aplicació, que està al darrere del servidor web. Per a generar la web del contingut dinàmic, el servidor d'aplicació és més complexe perquè ha d'aplicar llògica, comunicar-se amb bases de dades i consultar permisos</p>
-        <h2>SPA</h2>
-        <p>Les SPA són webs que tenen una sola plana per a fer que el contingut vagi més ràpid. Està composada per 1 sol document HTML(+els CSS i Javascript que calguin)</p>
-        <p>Si vols veure una web que funciona així, consulta <a href="https://therogersito.github.io/coursera2023/LoTemps/">aquí</a></p>
-        <h2>Introducció a React</h2>
-        <p>React és un Framework Javascript que facilita la creació d'aplicacions web tant per ordinadors com per mòbils</p>
-        <p>Es fa servir sobretot per crear SPAs i app. L'avantatge és que el programador no necessita fer tant de codi per a que tot funcioni i que sigui fàcil de mantenir</p>
-        <p>El react està composat per diversos components que serien peces de la interfície d'usuari, cada component és part de la llibreria corresponent</p>
+        <div class="container">
+            <div class="row">
+                <h1>React</h1>
+                <div class="col-12 col-lg-6">
+                    <h2>Contingut estàtic o dinàmic</h2>
+                    <p>El contingut d'una web pot ser estàtic o dinàmic, la diferència seria el com és generat el contingut</p>
+                    <p>El contingut estàtic és el contingut que s'envia al client tal qual està desat al servidor</p>
+                    <p>El contingut dinàmic és generat en el moment en el que el servidor ha rebut la petició HTTP per part del client, per tant no ha sigut escrit per una persona, sinó autogenerat</p>
+                    <p>Aquest contingut és generat internament pel servidor d'aplicació, que està al darrere del servidor web. Per a generar la web del contingut dinàmic, el servidor d'aplicació és més complexe perquè ha d'aplicar llògica, comunicar-se amb bases de dades i consultar permisos</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>SPA</h2>
+                    <p>Les SPA són webs que tenen una sola plana per a fer que el contingut vagi més ràpid. Està composada per 1 sol document HTML(+els CSS i Javascript que calguin)</p>
+                    <p>Si vols veure una web que funciona així, consulta <a href="https://therogersito.github.io/coursera2023/LoTemps/">aquí</a></p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Introducció a React</h2>
+                    <p>React és un Framework Javascript que facilita la creació d'aplicacions web tant per ordinadors com per mòbils</p>
+                    <p>Es fa servir sobretot per crear SPAs i app. L'avantatge és que el programador no necessita fer tant de codi per a que tot funcioni i que sigui fàcil de mantenir</p>
+                    <p>El react està composat per diversos components que serien peces de la interfície d'usuari, cada component és part de la llibreria corresponent</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Funcionament del React</h2>
+                    <p>Cada component del React té el seu propi DOM virtual paral·lel al DOM del HTML, per a executar canvis ho faria així:</p>
+                    <ol>
+                        <li>El DOM virtual s'actualitza</li>
+                        <li>El DOM virtual actual és comparat amb el DOM anterior i es detecten els canvis</li>
+                        <li>Els canvis detectats són actualitzats al DOM del navegador</li>
+                        <li>La web del navegador és actualitzada per a que sigui igual a l'ultima versió del DOM del navegador</li>
+                    </ol>
+                    <p>Per a optimitzar el navegador, hi ha una eina anomenada React Fiber Architecture, que el que fa és prioritzar canvis a la web per a millorar el rendiment: prioritza primer els canvis visibles per a l'usuari i carrega més tard els canvis que l'usuari encara no veu</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Jerarquía dels components</h2>
+                    <p>Els components del React tenen certa jerarquía, que seria definida seguint un esquema així:</p>
+                    <ol>
+                        <li>App: seria el component que engloba tota l'aplicació web</li>
+                        <li>Header, main i bottom: serien les 3 parts de la web que engloben el contingut superior, l'inferior i el principal</li>
+                        <li>Contingut: és cada element de contingut que està dins del header, main, o bottom, com els títols, paràgrafs, imatges, videos, menús... Aquests components poden tenir alhora altres components a dins</li>
+                    </ol>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Alternantives a React</h2>
+                    <p>Al igual que el Bootstrap, React també té competència. Existeixen altres frameworks que fan coses semblants al React:</p>
+                    <ul>
+                        <li>Lodash: proveeix una llibreria per a aplicar llògica amb números</li>
+                        <li>Luxon: és una llibreria Javascript especialitzada en funcions de dates</li>
+                        <li>Redux: ajuda amb funcions que segueixin l'estat de l'aplicació web, com per exemple un carro de compra virtual</li>
+                        <li>Axios: simplifica l'enviament de peticions HTTP a APIs</li>
+                        <li>Jest: ajuda a crear tests automatitzats per a webs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

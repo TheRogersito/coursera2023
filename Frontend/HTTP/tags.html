@@ -1,92 +1,114 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Altres protocols</title>
+        <title>Tags</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>Etiquetes HTML</h1>
-        <p>Aquí veurem unes quantes etiquetes HTML, més que res un repàs</p>
-        <h2>Headings</h2>
-        <p>Són els h1, h2, h3... que es solen fer servir per fer un títol, mira l'exemple</p>
-        <h1>H1</h1>
-        <h2>H2</h2>
-        <h3>H3</h3>
-        <h4>H4</h4>
-        <h5>H5</h5>
-        <h6>H6</h6>
-        <p>el heading més petit és el h6, no hi ha h7</p>
-        <h2>Paràgrafs</h2>
-        <p>Són per posar text i l'etiqueta és "p". Aquest text mateix està dins un "p"</p>
-        <h3>Nova líniea</h3>
-        <p>"br" és per a iniciar una nova línia dins un "p"<br>és una etiqueta que no s'ha de tancar</p>
-        <h3>Strong</h3>
-        <p>"strong" es fa servir per a indicar que una part del text és <strong>important</strong></p>
-        <h3>Bold</h3>
-        <p>"b" fa el <b>mateix</b> que strong</p>
-        <h3>Italics i emphasis</h3>
-        <p>Les dues etiquetes "em" i "i" posen en <em>cursiva</em> la part del text que <i>interessa</i></p>
-        <h2>Llistes</h2>
-        <p>Les llistes es fan amb "ul" i "ol", depenent si volem que estiguin numerades o no</p>
-        <ol>
-            <li>Les llistes numerades es fan amb "ol" i les no numerades amb "ul"</li>
-            <li>Cada element nou de la llista ha d'estar dins de l'etiqueta "li"</li>
-            <ul>
-                <li>Recorda també que podem fer llistes dins d'altres llistes</li>
-                <li>Així de fàcil</li>
-            </ul>
-        </ol>
-        <h2>Div</h2>
-        <p>L'etiqueta "div" és una caixa, se sol fer servir per a contenir tot tipus de contingut i per a jugar amb ell amb el css</p>
-        <!-- Hola jo sóc un comentari que no apareix a la web -->
-        <h2>Hiperlinks</h2>
-        <p>
-            Els hiperlinks són per a redirigir l'usuari a una nova plana, ja sigui del website o de fora. Es fan amb l'etiqueta "a", mira l'exemple<br>
-            <a href="index.html">Trencaclosques</a>
-        </p>
-        <h2>Imatges</h2>
-        <p>les imatges es posen amb l'etiqueta "img" i han de tenir l'atribut "src" fent referència a l'imatge, és una etiqueta que no s'ha de tancar</p>
-        <img src="gango.png">
-        <p>A les imatges es poden posar els atributs "alt" per a proveir informació extra a la web, útil per al servidor o serveis d'audiodescripció</p>
-        <h2>Taules</h2>
-        <p>
-            Les taules es fab amb l'etiqueta "table", i fem una fila de la taula amb "tr" i cada cel·la amb "td"<br>
-            Per a fer la primera fila, es recomana fer cada cel·la amb l'etiqueta "th", ja que això fa que destaqui
-        </p>
-        <table>
-            <tr>
-                <th>Hola</th>
-                <th>Maco</th>
-            </tr>
-            <tr>
-                <td>Cel·la 1</td>
-                <td>Cel·la 2</td>
-            </tr>
-            <tr>
-                <td>Cel·la 3</td>
-                <td>Cel·la 4</td>
-            </tr>
-        </table>
-        <h2>Formularis</h2>
-        <p>Els formularis es fan amb l'etiqueta "form", requereixen una acció amb l'atribut "action" i un mètode HTTP amb l'atribut "method" que sol ser POST o GET</p>
-        <p>Cada part del formulari on l'usuari pot posar dades, es fa amb l'etiqueta "input", que requereix un "type"<br>
-        També es recomana posar una etiqueta "label" juntament amb cada element del formulari per a indicar a l'usuari què ha de posar</p>
-        <p>De inputs hi ha diversos tipus, que són: </p>
-        <ul>
-            <li>Text: requereix text que es pot veure</li>
-            <li>Password: requereix text que no es pot veure</li>
-            <li>Submit: És el botó que executa l'acció del formulari</li>
-            <li>Checkbox: és una caixa marcable</li>
-            <li>Radio: són els cercles dels quals només podem marcar un</li>
-            <li>Number: requereix un número</li>
-            <li>Email: requereix un correu electrònic</li>
-            <li>File: solicita que es pengi un arxiu</li>
-            <li>Textarea: Aquest és especial perquè és la seva pròpia etiqueta, es fa servir per a text que pot ser de diverses línies</li>
-            <li>Select: Aquest també és la seva pròpia etiqueta i cada nova opció ha d'estar dins de l'etiqueta "option". És un menú desplegable</li>
-        </ul>
-        <h2>DOM</h2>
-        <p>L'idea del DOM és la d'un arbre tenint les seves branques amb el document HTML i les etiquetes de dins(les branques són les etiquetes dins d'altres etiquetes)</p>
+        <div class="container">
+            <div class="row">
+                <h1>Etiquetes HTML</h1>
+                <p>Aquí veurem unes quantes etiquetes HTML, més que res un repàs</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Headings</h2>
+                    <p>Són els h1, h2, h3... que es solen fer servir per fer un títol, mira l'exemple</p>
+                    <h1>H1</h1>
+                    <h2>H2</h2>
+                    <h3>H3</h3>
+                    <h4>H4</h4>
+                    <h5>H5</h5>
+                    <h6>H6</h6>
+                    <p>el heading més petit és el h6, no hi ha h7</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Paràgrafs</h2>
+                    <p>Són per posar text i l'etiqueta és "p". Aquest text mateix està dins un "p"</p>
+                    <h3>Nova líniea</h3>
+                    <p>"br" és per a iniciar una nova línia dins un "p"<br>és una etiqueta que no s'ha de tancar</p>
+                    <h3>Strong</h3>
+                    <p>"strong" es fa servir per a indicar que una part del text és <strong>important</strong></p>
+                    <h3>Bold</h3>
+                    <p>"b" fa el <b>mateix</b> que strong</p>
+                    <h3>Italics i emphasis</h3>
+                    <p>Les dues etiquetes "em" i "i" posen en <em>cursiva</em> la part del text que <i>interessa</i></p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Llistes</h2>
+                    <p>Les llistes es fan amb "ul" i "ol", depenent si volem que estiguin numerades o no</p>
+                    <ol>
+                        <li>Les llistes numerades es fan amb "ol" i les no numerades amb "ul"</li>
+                        <li>Cada element nou de la llista ha d'estar dins de l'etiqueta "li"</li>
+                        <ul>
+                            <li>Recorda també que podem fer llistes dins d'altres llistes</li>
+                            <li>Així de fàcil</li>
+                        </ul>
+                    </ol>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Div</h2>
+                    <p>L'etiqueta "div" és una caixa, se sol fer servir per a contenir tot tipus de contingut i per a jugar amb ell amb el css</p>
+                    <!-- Hola jo sóc un comentari que no apareix a la web -->
+                    <h2>Hiperlinks</h2>
+                    <p>
+                        Els hiperlinks són per a redirigir l'usuari a una nova plana, ja sigui del website o de fora. Es fan amb l'etiqueta "a", mira l'exemple<br>
+                        <a href="index.html">Trencaclosques</a>
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Imatges</h2>
+                    <p>les imatges es posen amb l'etiqueta "img" i han de tenir l'atribut "src" fent referència a l'imatge, és una etiqueta que no s'ha de tancar</p>
+                    <img src="gango.png">
+                    <p>A les imatges es poden posar els atributs "alt" per a proveir informació extra a la web, útil per al servidor o serveis d'audiodescripció</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Taules</h2>
+                    <p>
+                        Les taules es fab amb l'etiqueta "table", i fem una fila de la taula amb "tr" i cada cel·la amb "td"<br>
+                        Per a fer la primera fila, es recomana fer cada cel·la amb l'etiqueta "th", ja que això fa que destaqui
+                    </p>
+                    <table>
+                        <tr>
+                            <th>Hola</th>
+                            <th>Maco</th>
+                        </tr>
+                        <tr>
+                            <td>Cel·la 1</td>
+                            <td>Cel·la 2</td>
+                        </tr>
+                        <tr>
+                            <td>Cel·la 3</td>
+                            <td>Cel·la 4</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Formularis</h2>
+                    <p>Els formularis es fan amb l'etiqueta "form", requereixen una acció amb l'atribut "action" i un mètode HTTP amb l'atribut "method" que sol ser POST o GET</p>
+                    <p>Cada part del formulari on l'usuari pot posar dades, es fa amb l'etiqueta "input", que requereix un "type"<br>
+                    També es recomana posar una etiqueta "label" juntament amb cada element del formulari per a indicar a l'usuari què ha de posar</p>
+                    <p>De inputs hi ha diversos tipus, que són: </p>
+                    <ul>
+                        <li>Text: requereix text que es pot veure</li>
+                        <li>Password: requereix text que no es pot veure</li>
+                        <li>Submit: És el botó que executa l'acció del formulari</li>
+                        <li>Checkbox: és una caixa marcable</li>
+                        <li>Radio: són els cercles dels quals només podem marcar un</li>
+                        <li>Number: requereix un número</li>
+                        <li>Email: requereix un correu electrònic</li>
+                        <li>File: solicita que es pengi un arxiu</li>
+                        <li>Textarea: Aquest és especial perquè és la seva pròpia etiqueta, es fa servir per a text que pot ser de diverses línies</li>
+                        <li>Select: Aquest també és la seva pròpia etiqueta i cada nova opció ha d'estar dins de l'etiqueta "option". És un menú desplegable</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>DOM</h2>
+                    <p>L'idea del DOM és la d'un arbre tenint les seves branques amb el document HTML i les etiquetes de dins(les branques són les etiquetes dins d'altres etiquetes)</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
