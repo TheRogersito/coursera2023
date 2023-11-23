@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactivitat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Interactivitat</h1>
+                <div class="col-6 col-lg-12">
+                    <h2>Mòduls</h2>
+                    <p>Els mòduls són una manera d'aplicar part d'un arxiu javascript a un html. Per a fer-ho, hem d'expressar amb la paraula "export" les dades exportables de l'arxiu javascript i "import" dins l'element script type="module" al document html</p>
+                </div>
+                <div class="col-6 col-lg-12">
+                    <h2>Manipulació del DOM</h2>
+                    <p>El document html pot ser modificat des del javascript seguint el model del DOM html</p>
+                    <p>Un exemple per a fer-ho seria: "const h2 = document.createElement('h2')"<br>
+                        Amb això hem creat un objecte desat en la constant h2, objecte el qual podem modificar les variables de dins com el innerText o el mètode setAttribute()<br>
+                        Finalment per a afegir això al document podem fer servir la comanda: "document.body.appendChild(h2)"
+                    </p>
+                </div>
+                <div class="col-6 col-lg-12">
+                    <h2>Selectors Javascript</h2>
+                    <p>Podem seleccionar elements concrets del html amb comandes del javascript:</p>
+                    <ul>
+                        <li>document.querySelector('p'): selecciona la primera etiqueta que tingui de nom el paràmetre. Una comanda similar, el document.querySelectorAll('p') retorna un array amb totes les etiquetes en qüestió</li>
+                        <li>document.getElementById('id'): selecciona l'etiqueta que tingui de id el paràmetre especificat.</li>
+                        <li>document.getElementsByClassName('class'): seleciona les etiquetes que tinguin de classe el paràmetre especificat</li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-12">
+                    <h2>Events</h2>
+                    <p>Els events són funcions que s'executen quan hi ha alguna altre acció en específic. Poden aplicar-se de dues maneres</p>
+                    <ul>
+                        <li>Afegint el mètode addEventListener a l'objecte de l'etiqueta seleccionat: document.querySelector('p').addEventListener('acció','funció')</li>
+                        <li>Fent que l'element tingui un atribut d'event, com el onclick. onclick="funcio()"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
