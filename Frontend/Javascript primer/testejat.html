@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Errors</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Testejat</h1>
+                <div class="col-12 col-lg-6">
+                    <h2>Node i NPM</h2>
+                    <p>Node.js és un tipus d'arxiu javascript que funciona independent del navegador. Pot funcionar a una línea de comandes, una aplicació desktop o en Back-end. En altres paraules, es poden crear aplicacions full-stack amb només JavaScript</p>
+                    <p>El NPM permet als desenvolupadors fer servir llibreries i frameworks al node.js en forma de mòduls o paquets NPM. L'aplicació npm en si permet la descarrega de les llibreries i els frameworks pel node.js</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Testejat en general</h2>
+                    <p>Una manera de testejar un codi, seria posar el codi a testejar en una funció i comentar la crida de la funció amb el resultat esperat. No obstant, aquesta manera pot ser ambigua</p>
+                    <p>Una altre manera seria fer servir el jest que veurem més tard. Permet un testejat més específic amb la funció: expect(funcio(parametres)).toBe(resultatEsperat)</p>
+                    <p>Respecte el testejar, hi ha el que es coneix com a refactoritzar, que seria reescriure codi sense afectar el seu resultat per a que sigui més fàcil de llegir o més ràpid</p>
+                    <p>Hi ha 3 tipus de testejat:</p>
+                    <ul>
+                        <li>e2e: imitar l'acció de l'usuari per a garantitzar que l'usuari real no tingui cap problema. Per desgràcia sol sel lent</li>
+                        <li>Integració: testejar que parts del sistema interactuin bé entre elles. Són més ràpides i barates que les e2e</li>
+                        <li>Unitat: testejar les parts més petites del codi en solitari(les funcions). Són les més ràpides i barates</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Jest</h2>
+                    <p>El Jest és un framework que permet un testejat de codi ràpid i fàcil. Està fet per meta, igual que React</p>
+                    <p>Jest dóna una característica al codi que s'anomena Code Coverage, vindria a significar la quantitat de codi que el Jest considera més vàlid, per tant quant més code coverage, menys testejat es sol requerir</p>
+                    <p>Jest també dona la possibilitat de fer Mocking, que és fer passar una acció com si fós del servidor per a testejar característiques que requereixen codi al back-end sense que encara hi hagi aquest codi. Així no hem d'esperar al back-end per a testejar i avançar</p>
+                    <p>Per a instalar-lo però, és complicat. Hem d'anar a la carpeta on hi hagi els arxius amb el terminal i instalar amb npm. Després fer un arxiu a part en aquest format: "arxiu.test.js". Millor mira el video: <a href="https://www.coursera.org/learn/programming-with-javascript/lecture/8zZEJ/writing-tests-with-jest">Explicacio del Jest</a></a></p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>TDD</h2>
+                    <p>El TDD(Test-Driven Development) és una manera de desenvolupar codi prioritzant el testejat. Això implica aplicar passos diferents a un desenvolupament convencional. Seria més o menys així:</p>
+                    <ol>
+                        <li>Escriure un test mínim pel codi i executar-lo. Falla</li>
+                        <li>Escriure el codi mínim per a que el test passi</li>
+                        <li>Tornar a executar el test i veure que és vàlid</li>
+                        <li>Reescriure el test amb un nou requeriment i tornar a executar. Falla un altre cop</li>
+                        <li>Reescriure codi per a que torni a passar</li>
+                        <li>Tornar a executar el test i veure que és vàlid un altre cop, i així seguim fins que tenim el codi final</li>
+                    </ol>
+                    <p>El TDD es fa servir molt, ja que permet testejar de manera automatitzada i minimitza bugs</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

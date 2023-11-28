@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introducció a control de versions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Control de versions</h1>
+                <p>El control de versions és una manera de controlar el desenvolupament d'una app, tenint còpies de cada versió per si en algún moment alguna cosa va malament, poder restaurar una versió antiga</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Introducció</h2>
+                    <p>L'objectiu del control de versió, és fer un seguiment dels canvis fets en cada versió del producte, tenint accés a un historial amb la possibilitat de tornar enrere en qualsevol moment</p>
+                    <p>Normalment, això funciona fent un seguiment de quan i qui ha fet un canvi al repositori on es troba la app</p>
+                    <p>El control de versió té a veure amb la colaboració entre desenvolupadors, ja que normalment molta gent té accés al mateix producte, així que és fundamental saber qui fa cada cosa i quan</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Sistemes i eines</h2>
+                    <p>Hi ha molst sistemes de control de versió, però tots es podrien resumir en 2 tipus principals:</p>
+                    <ul>
+                        <li>Sistemes centralitzats: El codi es troba a un servidor i cada client ha de descarregar una còpia per a poder modificar-lo i pujar la còpia al servidor amb els canvis. Solen donar més control d'accés i són més fàcils d'aprendre. No obstant, són més lents</li>
+                        <li>Sistemes distribuits: Són semblants als sistemes centralitzats però cada client té accés al historial de canvis. Són més ràpids</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Workflow</h2>
+                    <p>El workflow és la fluidesa amb la que s'apliquen els canvis a l'app. Són maneres d'aplicar un control de versió òptim. Es resumiria en 3 fases:</p>
+                    <ul>
+                        <li>Continous Integration(CI): són els petits canvis efectuats en un període de temps curt, normalment un dia. Es fan per a garantitzar l'estabilitat del codi amb cada canvi individual</li>
+                        <li>Continous Delivery: és una extensió del CI. Un cop els canvis han sigut aplicats al codi font, empaqueta l'aplicació i la prepara per a llençar-la</li>
+                        <li>Continous Deployment: després de la fase del Continous Delivery, l'aplicació és testejada en un entorn segur per a localitzar errors abans d'enviar-la al públic. El període de testeig es diu Staging i el de llançament al públic Production</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
