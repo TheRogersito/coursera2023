@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Git i Github</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Git i Github</h1>
+                <p>Git és un sistema de control de versions dissenyat per a facilitar la visualització de canvis entre versions. Té com a característiques principals que és ràpid, fiable, de codi obert i accessible</p>
+                <p>Github en canvi, és una plataforma que utilitza tecnologia Git per a funcionar i l'expandeix facilitant una UI, control d'accés, pull requests i automació. També té algunes característiques de xarxes socials, com perfils</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Com funciona un Git</h2>
+                    <p>El Git funciona de la següent manera, un cop es té un usuari hem de crear un repositori que tindrà per defecte una branca "main". Aquí és on podem penjar i descarregar arxius. Un nou repositori podem fer que tingui un README.md i tots els repositoris tenen una carpeta ".git" que fa seguiment dels canvis</p>
+                    <p>El git té un workflow que serien les fases que segueixen les dades que es pugen al servidor:</p>
+                    <ol>
+                        <li>Directori de feina: és l'espai que es fa servir per a treballar en els canvis. Esborrar i crear carpetes i arxius compta com a canvis. Un cop acabada la fase, hem d'aplicar la comanda "git add"</li>
+                        <li>Staging: els canvis durant la feina han sigut localitzats. Un cop acabada la fase, hem d'aplicar la comanda "git commit"</li>
+                        <li>Commited: els canvis són enviats al repositori. Per a fer-ho apliquem la comanda "git push"</li>
+                        <li>Repositori remot: el servidor del repositori rep les dades noves i les aplica al repositori</li>
+                    </ol>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Comandes bàsiques de Git</h2>
+                    <p>Aquí veuràs algunes comandes que té git per a funcionar</p>
+                    <ul>
+                        <li>git init: crea un nou repositori local</li>
+                        <li>git add: fa que un arxiu o carpeta tingui seguiment per a fer canvis i sigui inclosa en el commit</li>
+                        <li>git restore --stage: fa el contrari que el git add, ja que desmarca l'arxiu o carpeta pel commit i deixa de tenir el seguiment</li>
+                        <li>git commit -m: prepara els arxius i carpetes previament preparats amb el git add per a pujar-los al servidor un cop estiguin llestos</li>
+                        <li>git push: puja els arxius preparats amb el commit al servidor i aplica els canvis al codi fort</li>
+                        <li>git pull: baixa els últims canvis fets al codi font del servidor</li>
+                        <li>git clone: copia tot el codi font del servidor i el baixa al local</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Branques</h2>
+                    <p>Les branques són extensions d'un repositori per a poder efectuar canvis sense afectar el projecte principal. Es poden crear amb la comanda "git cheackout -B branca". "git checkout" es fa servir per a saber a quina branca es troba un</p>
+                    <p>Per a poder enviar les dades a la nova branca, es fa amb la comanda push d'aquesta manera: "git push -u origin branca". Un cop fer, l'administrador té accés als canvis i pot decidir si aplicar-los o no a la branca principal</p>
+                    <h2>Remot contra local</h2>
+                    <p>El codi a github pot estar desat en remot o en local. En remot vol dir que el codi font es troba desat a un servidor i en local vol dir que el codi sencer es troba a una màquina client</p>
+                    <p>Podem treballar amb un codi en remot gràcies a git fent un repositori local enllaçat amb el del servidor</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>HEAD</h2>
+                    <p>HEAD és un fitxer dins de la carpeta .git que serveix per a donar la id de l'ultim commit executat a una branca. Per a canviar la branca de la qual el head doni l'ultim commit, ho fem amb la comanda "git checkout repositori". Podem consultar a quina branca apunta head amb "cat .git/HEAD" i la id de l'ultim commit de la branca amb "cat /refs/heads/main"</p>
+                    <h2>Comandes Diff</h2>
+                    <p>"git diff" és una comanda especial del git perquè informa de quins canvis s'han efectuat. Ho fa comparant la versió anterior d'un arxiu amb l'actual amb la que s'està treballant</p>
+                    <p>Es poden fer comparacions en diferents nivells:</p>
+                    <ul>
+                        <li>Un sol arxiu: compara només canvis en el contingut d'un arxiu. Exemple: "git diff HEAD arxiu.txt"</li>
+                        <li>commits anteriors: compara diferències en tots els arxius de dos commits diferents. Podem veure tots els id de commits amb "git log --pretty=oneline" i després seleccionant els dos commits que ens interessa. Exemple: "git diff idCommit1 idCommit2"</li>
+                        <li>Entre branques: compara diferències entre branques. Podem veure totes les branques amb "git branch" i després seleccionant les dues branques que ens interessa. Exemple: "git diff branca1 branca2"</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Blame</h2>
+                    <p>Blame és una comanda que permet saber l'usuari que ha fet una modificació. Es fa així "git blame arxiu.txt" i dona una llista dels canvis amb cada canvi tenint: l'usuari, la id del commit, la data, l'hora, la línea de codi on hi ha el canvi i el canvi en si</p>
+                    <p>Podem filtrar les dades que volem especificant les línies del codi que volem mirar ambn la flag -L. Exemple: "git blame -L 5,15 arxiu.txt" doanria només els canvis entre les línies 5 i 15</p>
+                    <h2>Forking</h2>
+                    <p>Forking és un sistema alternatiu de workflow que no funciona amb branques. A diferència de les branques, el forking crea un repositori nou paral·lel al principal copiant el contingut. Aquest repositori forkejat pot estar al dia amb l'original fent un pull i l'amo del repositori original pot agafar canvis en els forkejats si es fa una push request</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
