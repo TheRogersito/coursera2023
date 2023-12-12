@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Layouts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>            
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>CSS Layouts</h1>
+                <p>Les layouts CSS són maneres de mostrar el contingut html en pantalla, o en altres paraules, el display. Hi ha diversees maneres de fer-ho:</p>
+                <ul>
+                    <li>Flexbox: proporciona un disseny flexible, però només respon en una dimensió: columnes o files</li>
+                    <li>Grid: és semblant al flexbox, amb la diferència que crea una taula bidimensional</li>
+                </ul>
+                <div class="col-12 col-lg-6">
+                    <h2>Flexbox</h2>
+                    <p>Quan les caixes actúen en flexbox, miren primer si tenen espai en l'eix horitzontal. Si no el tenen, passen a la línea següent. Hi ha 4 propietats principals per a alinear les caixes en el flex:</p>
+                    <ul>
+                        <li>justify-content: és per a alinear les caixes en l'eix horitzontal. Podem fer que estiguin a la dreta, esquerra o al mig. Si a més posem la propietat "flex-wrap: wrap" les caixes s'adaptaràn a l'amplada de la pantalla</li>
+                        <li>align-items: alinea les caixes en l'eix horitzontal. Pot tenir aquests valors: flex-end, flex-start, center i stretch.</li>
+                        <li>align-self: s'utilitza en una o diverses caixes en concret, sense afectar la majoria. Serveix per a alinear les caixes horitzontalment de manera selectiva</li>
+                        <li>flex: posa la caixa en mode grid i ha de tenir 3 valors: flex-grow(créixer segons espai), flex-shrink(encongir-se segons espai) i flex-basis(com el flex agafa espai)</li>
+                    </ul>
+                    <p>Normelment, el flexbox es fa servir per a un número reduït de caixes que actúen en conjunt, com una barra de cerca, un nav o una galería d'imatges</p>
+                    <p>Amb el flex, podem crear gràfic de dades, es fiuen flexcharts, mira l'exemple:</p>
+                    <div class="container" style="display: flex; align-items: stretch; flex:1; justify-content: flex-start; text-align: center;">
+                        <div class="rada" style="flex-basis: 15%; background-color: red;">15</div>
+                        <div class="rada" style="flex-basis: 27.5%; background-color: blue; color:white">27.5</div>
+                        <div class="rada" style="flex-basis: 14%; background-color: yellow;">14</div>
+                        <div class="rada" style="flex-basis: 31.5%; background-color: green; color:white">31.5</div>
+                        <div class="rada" style="flex-basis: 12%; background-color: pink;">12</div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Unitats de mida</h2>
+                    <p>En el css hi ha diverses maneres numèriques de medir i definir l'espai:</p>
+                    <p>Medicions de valor absolut:</p>
+                    <ul>
+                        <li>Q: quarts de milímetre</li>
+                        <li>mm: milímetres</li>
+                        <li>cm: centímetres</li>
+                        <li>in: polzada</li>
+                        <li>px: píxels</li>
+                    </ul>
+                    <p>Medicions de valor relatiu:</p>
+                    <ul>
+                        <li>em: tamany de la lletra respecte l'element que la conté</li>
+                        <li>rem: tamany de la lletra respecte l'element arrel</li>
+                        <li>vw: percentatge de l'amplada de la pantalla</li>
+                        <li>vh: percentatge de l'alçada de la pantalla</li>
+                        <li>vmin: percentatge de la mida més petita de la pantalla</li>
+                        <li>vmax: percentatge de la mida més gran de la pantalla</li>
+                        <li>%: percentatge respecte l'element que la conté</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Grids</h2>
+                    <p>El grid és una manera diferent de mostrar el contingut en pantalla, ho fa creant una taula invisible que serà on es col·loquen les caixes</p>
+                    <p>Per a crear una taula grid, es fan servir les següents propietats css:</p>
+                    <ul>
+                        <li>display: ha de tenir el valor "grid". Determina que el contenidor està en mode grid</li>
+                        <li>grid-template-columns: determina la mida i quantitat de columnes. Es pot definir en px o fr, que fr seria la mida relativa respecte altres columnes</li>
+                        <li>grid-template-rows: fa el mateix que grid-template-columns però amb les files</li>
+                        <li>grid-gap: defineix l'espai entre les cel·les del grid. Podem fer que sigui només amb files o culumnes amb grid-row-gap o grid-column-gap</li>
+                        <li>grid-auto-columns i grid-auto-rows: es defineix un número de columnes o files de manera automàtica, però nosaltres definim la mida</li>
+                        <li>repeat(): és un valor que pot tenir grid-template-rows o grid-template-columns. Determina quantitat i mida comuna de files o columnes. S'utilitza així: repeat(4, 75px)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

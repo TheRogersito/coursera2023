@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inputs i formularis</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Inputs i formularis</h1>
+                <p>Els inputs són elements HTML que requereixen que l'usuari hi introdueixi certes dades, i els formularis són un conjunt d'inputs que demanen dades relacionades entre si</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Validació</h2>
+                    <p>Els formularis necessiten sistemes de validació que verifiquin si les dades són correctes. Hi ha dos tipus de validació:</p>
+                    <ul>
+                        <li>Validació per client: són validacions que es poden fer des del propi navegador, per a aplicar-les podem fer que cada input tingui un type específic i així el client no podrà posar unes dades que no poden ser. Un exemple seria intentar posar una URL a un input type email</li>
+                        <li>Validació per servidor: són validacions que requereixen certa comunicació amb el servidor, com consultar si s'intenta posar un email existent a la base de dades, passa la validació per client perquè és un email vàlid però el servidor detecta que ja existeix, per tant, no pot procedir</li>
+                    </ul>
+                    <p>Per a la validació per client, com hem comentat abans, podem fert que els inputs tinguin types específics, que serien aquests:</p>
+                    <ul>
+                        <li>Button: és una etiqueta en si, un botó clickejable</li>
+                        <li>Checkbox: el quadradet que es pot marcar o desmarcar</li>
+                        <li>Radio: el conjunt de rodonetes de les quals només podem marcar-ne una. Per a definir un conjunt indepenent, hem de fer que tots els input radio estiguin dins d'una etiqueta fieldset. Cada input ha de tenir un value, un name que sigui el mateix que el id del fieldset i si volem una opció marcada per defecte, l'etiqueta input que volguem ha d'acabar amb la paraula checked. Si posem cada input dins un label serà més fàcil de marcar</li>
+                        <li>Submit: És el botó que enviarà les dades al servidor un cop estigui finalitzat</li>
+                        <li>Text: requereix text, així de simple</li>
+                        <li>Password: també requereix text però el text en qüestió es mostra invisible</li>
+                        <li>Date: demana una data</li>
+                        <li>Datetime-local: demana una data, hora i minuts</li>
+                        <li>Email: requereix un correu electrònic vàlid</li>
+                        <li>File: demana pujar un arxiu</li>
+                        <li>Hidden: defineix un valor que no posa l'usuari però que es puja al servidor igualment</li>
+                        <li>Image: És com el submit, però ha de tenir un src amb una imatge</li>
+                        <li>Number: requereix un número. Pot tenir un mínim i un màxim</li>
+                        <li>Range: és com el Number però es mostra en forma de barra</li>
+                        <li>Reset: és un botó que si es clica el formulari torna als valors per defecte</li>
+                        <li>Search: és com el text però potser és estilat diferent</li>
+                        <li>Time: demana hora i minuts</li>
+                        <li>Tel: en principi demana un número de telèfon, però no valida bé. Per a validar millor es posa un pattern</li>
+                        <li>Url: requereix una URL vàlida</li>
+                        <li>Week: demana un número de setmana i any</li>
+                        <li>Month: demana un número de mes i any</li>
+                    </ul>
+                    <p>Per a fer que la validació per client sigui el màxim d'eficient, hem de posar "required" al final de les etiqueta input per a que siguin camps requerit i així ens estalviem enviar una petició http innecessària. També podem afegir minlengths i maxlengths per a que certs camps tinguin un número de caràcters en un rang específic</p>
+                    <p>Tingues en compte que podem comunicar a l'usuari que ha posat malament certes dades amb el css, fent servir la pseudoclasse input:focus:invalid</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Més formes d'inputs</h2>
+                    <p>Hi ha altres formes d'inputs o tècniques que poden ser útils, mira algunes:</p>
+                    <p>Si posem una propietat value a un input, serà el valor que per defecte tindrà el formulari però fent només això no es mostrarà, per a fer-ho hem de fer una etiqueta output just a sota de la d'input amb el valor en qüestió</p>
+                    <p>En un range, si volem que el número canviï a mida que movem la barra, dins de l'etiqueta input hem de posar la propietat oninput="this.nextElementSibling.value = this.value"</p>
+                    <p>En cas que volguem fer que un input sigui una llista de molts elements, el que hem de fer és un input sense type però amb una list i a sota una etiqueta datalist que tingui de id el mateix que la list del input. Dins de l'etiqueta datalist posem cada opció amb l'etiqueta option, que cada una ha de venir amb un value</p>
+                    <h2>Finalització del formulari</h2>
+                    <p>Un cop posades les dades al formulari, es fa clic a un botó per a que el navegador fagi alguna cosa amb les dades, aquí veurem de què es tracta</p>
+                    <p>Quan es fa un submit, el mètode http especificat al form s'executa, que pot ser un POST o un GET. Normalment es fa servir un HTTPS POST ja que és la manera més segura de transmetre les dades</p>
+                    <p>Per a decidir com actua el formulari un cop es fa clic al submit, s'han de definir certes propietats a l'etiqueta form, action i method. A action posem l'adreça del lloc on seran enviades les dades, que sol ser "/login" i a method, el mètode http amb el qual seran enviades les dades, que sol set "post"</p>
+                    <h2>Elements del formulari</h2>
+                    <p>Per acabar, aquí tens un resum dels elements o etiquetes que es poden fer servir en un formulari:</p>
+                    <ul>
+                        <li>input: l'etiqueta estàndar per a posar dades, els type els hem vist abans</li>
+                        <li>label: És per a descriure l'input que va a continuació. Ha de tenir una propietat for que tingui el mateix valor que la id del input que descriu</li>
+                        <li>select: Fa una llista d'opcions desplegable, cada opció va dins d'una etiqueta option</li>
+                        <li>textarea: És un requadre en el que es pot posar un text llarg</li>
+                        <li>button: un botó. L'acció que executa es posa a la propietat onclick</li>
+                        <li>fieldset: agrupa elements relacionats dins el formulari</li>
+                        <li>legend: Defineix un títol del fieldset</li>
+                        <li>datalist: especifica una llista d'opcions predefinides d'un input. A diferència d'un select, l'usuari pot posar un valor diferent dels predeterminats</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

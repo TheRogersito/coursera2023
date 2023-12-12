@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introducció</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="containter">
+            <div class="row">
+                <h1>HTML i CSS avançat</h1>
+                <p>En aquest mòdul, s'extén el coneixement sobre HTML i CSS. Sobretot en les següents àrees:</p>
+                <ul>
+                    <li>Ús de HTML en el món real</li>
+                    <li>Inputs d'usuari i formularis</li>
+                    <li>Elements media(video, audio...)</li>
+                    <li>Molt més de CSS</li>
+                    <li>Interactivitat amb CSS</li>
+                    <li>Efectes i animacions</li>
+                    <li>Testejat i debugging amb el navegador</li>
+                </ul>
+                <div class="col-12 col-lg-6">
+                    <h2>Resum d'etiquetes de HTML</h2>
+                    <p>Revisitem les etiquetes de html més bàsiques:</p>
+                    <ul>
+                        <li>header: conté la part de dalt de la plana, logo, títol i tal</li>
+                        <li>nav: sol contenir els links de la web</li>
+                        <li>footer: la part de baix de la plana, copyrightm links secundaris, olítica de privacitat i tal</li>
+                        <li>main: secció principal de la web, la del mig</li>
+                        <li>aside: secció d'algún costat de la web fora del main</li>
+                        <li>article: bloc de contingut semi-independent</li>
+                        <li>section: secció que sol estar dins un article per a separar contingut</li>
+                        <li>figcaption: descripció d'una imatge</li>
+                        <li>menu: el mateix que ul</li>
+                        <li>p: paràgraf de text</li>
+                        <li>a: enllaç</li>
+                        <li>br: efecte de "intro" en un text(nova línea)</li>
+                        <li>time: el contingut és una data o hora o els dos</li>
+                        <li>code: el contingut és codi de computadora</li>
+                        <li>data: el contingut és dades que pot llegir una màquina</li>
+                        <li>audio: es fa servir per a posar arxius d'àudio a la plana</li>
+                        <li>canvas: renderitza contingut en 2D o 3D</li>
+                        <li>embed: conté un element que proveeix una aplicació externa, com un reproductor de vídeo o alguna altre cosa</li>
+                        <li>iframe: conté una pàgina web nestejada</li>
+                        <li>video: es fa servir per a posar arxius de vídeo a la plana</li>
+                        <li>picture: fa com el "img" però requereix un "source" per a funcionar</li>
+                        <li>source: marca l'arxiu que es veurà amb el "audio", "video" o "picture"</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Metadata</h2>
+                    <p>La metadata és informació que hi ha al html que no apareix visualment. S'inclou dins d'etiquetes "meta" dins de "head". Serveixen per a millorar l'experiència i tenir millors resultats per a buscadors</p>
+                    <p>Les etiquetes "meta" solen tenir dos propietats: name i content. Name seria el tipus de contingut que comunica i content les dades en si. Les metadades més destacades serien</p>
+                    <ul>
+                        <li>description: ofereix una descripció breu de la web</li>
+                        <li>title: títol de la web</li>
+                        <li>author: indica l'autor de la web</li>
+                        <li>language: indica l'idioma de la web</li>
+                        <li>robots: indicacions per als buscadors quan valoren la pàgina</li>
+                        <li>rating: és per a indicar el tipus d'audiència a la que va dirigida la web</li>
+                        <li>copyright: especifica el copyright</li>
+                        <li>viewport: especifíca l'àrea de la web depenent de la mida del navegador que fa servir l'usuari</li>
+                    </ul>
+                    <p>Hi ha un tipus d'etiqueta "meta" especial que s'especialitza en donar informació a xarxes socials. Requereixen que es fagin servir les 4 alhora i tenen les propietats "property" i "content". Són aquestes:</p>
+                    <ul>
+                        <li>og:title: defineix el títol de la pròpia web</li>
+                        <li>og:type: indica el tipus d'arxiu, que pot ser "website", "video", "music" o "article"</li>
+                        <li>og:url: especifica la url de la pròpia web per a que la xarxa social ho utilitzi</li>
+                        <li>og:image: és la imatge que es veurà quan la web pròpia sigui compartida</li>
+                    </ul>
+                    <p>A part d'aquestes propietats hi ha d'altres opcionals, per exemple "og:description", "og:locale" o "og:site_name"</p>
+                    <p>Aquestes etiquetes "meta" especials construeixen les social media cards, que són tarjetes que apareixen a xarxes socials i que redireccionen a la pàgina web a la que fan referència</p>
+                    <h2>Dissenys estàndar</h2>
+                    <p>Hi ha moltes pàgines web, i moltes d'elles fan servir un disseny similar en quant a estructura. Mira algunes estructures estàndar:</p>
+                    <ul>
+                        <li>Top navbar: és l'idea de combinar el "nav" i el "header" fent que títol, buscardor intern i enllaços, entre d'altres, es mostrin en una sola línea</li>
+                        <li>Carousel: És un element de la plana que va rotant entre diferents continguts un cop passa cert temps</li>
+                        <li>Disseny de blog: En aquest disseny, els continguts estan posats en caixes i el tamany de la caixa depèn de l'importància del que conté</li>
+                        <li>Dashboard: se sol utilitzar quan l'usuari ha de canviar de continguts ràpidament. L'idea seria posar l'accés a diverses planes a un aside</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

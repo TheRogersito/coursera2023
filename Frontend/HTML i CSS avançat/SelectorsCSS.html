@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Selectors CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>            
+    </head>
+    <body>
+        <style>
+            li::marker{
+                content:"ඞ ";
+                color:blue
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <h1>Selectors CSS</h1>
+                <p>Els selectors CSS són la part del css que diu on s'aplicaràn les edicions establertes. Els més utilitzats són els d'element, de id i de classe</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Altres selectors de CSS</h2>
+                    <p>A part dels que hem vist hi ha selectors de css més complicadets, serien aquests:</p>
+                    <ul>
+                        <li>Per tenència de propietat: es fa seleccionant certs elements que tenen certa propietat, independentment del valor de la propietat. Exemple: a[class]{}; això afectaria a totes les etiquetes "a" que tinguin una propietat class</li>
+                        <li>Per propietat amb valor aproximat: se selecciona elements que tenen una propietat que conté un valor que conté els caràcters especificats. Exemple: a[href*="google"]{}; això afectaria a les etiquetes "a" que tinguin la propietat href i que el valor d'aquest href contingui la paraula "google" on sigui</li>
+                        <li>Per propietat de valor exacte: se selecciona elements que tenen una propietat amb un valor en específic. Exemple: a[href="www.google.com"]{}; afectaria a les etiquetes "a" amb la propietat "href" que tingui el valor concret "www.google.com"</li>
+                        <li>Per propietat amb valor que comença: se selecciona elements que tenen una propietat amb un valor que comença amb uns caràcters específics. Exemple: a[href^="www."]{}</li>
+                        <li>Per propietat amb valor que comença: se selecciona elements que tenen una propietat amb un valor que acaba amb uns caràcters específics. Exemple: a[href$=".com"]{}</li>
+                        <li>Per element repetit: l'element seleccionat és el que té certa posició dins una llista d'elements dins un mateix element parent. Exemple: li:nth-child(2){}; afectaria a cada segon "li" d'un conjunt de "li"</li>
+                        <li>Universar: afecta a tots els elements. Exemple: *{}; afecta a absolutament tots</li>
+                        <li>Per grup: és combinar una llista de normes CSS a diferents selectors. Per exemple: a, p{}; afectaria a totes les etiquetes "a" i "p"</li>
+                    </ul>
+                    <h2>Combinacions de selectors</h2>
+                    <p>En el CSS podem combinar selectors per a aconseguir selectors encara més específics. Es poden combinar de 4 maneres diferents:</p>
+                    <ul>
+                        <li>Selectors per descendència: seleccionem elements específics que siguin descendents d'un altre element específic. Exemple: #carta h2{}; Se selecciona tots els elements h2 dins d'una etiqueta que té de id "carta"</li>
+                        <li>Selectors child: és semblant al selector per descendència, però només afecta als descendents directes. Exemple: #par > h2{}; Afectaria només als h2 que siguin descendents directes de l'etiqueta de id "par", si hi ha un h2 dins d'una altre etiqueta no es veurà afectat</li>
+                        <li>Selectors siblings: selecciona els elements que estiguin dins d'una mateixa etiqueta i que estiquin escrits després. Exemple: h1 ~ p{}; Això afecta als elements "p" dins de la mateixa etiqueta on està un element "h1" i que estiguin escrits després d'aquest "h1"</li>
+                        <li>Selectors siblings adjacents: és com l'anterior però només selecciona un element, el més proper. Exemple: h1 + p{}; Seleccionaria l'element "p" que va després d'un element "h1" sense tocar els altres</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Pseudoclasses</h2>
+                    <p>Les pseudoclasses són classes dins del CSS que només apliquen sota certes circumstàncies. S'escriuen així: selector:pseudo-classe{};. Aquí alguns exemples:</p>
+                    <ul>
+                        <li>hover: aplica quan l'usuari té el ratolí a sobre sense clicar</li>
+                        <li>active: aplica quan l'usuari està fent clic sobre l'element</li>
+                        <li>disabled i enabled: actúa sobre botons en un formulari, quan estan marcats o sense marcar</li>
+                        <li>checked i indeterminat: actúa sobre checkboxes en formulari, quan estan o no marcades</li>
+                        <li>valid i invalid: també en formularis, quan les dades posades són vàlides o no</li>
+                        <li>optional i required: també en formularis, aplica a elements requerits o no requerits</li>
+                        <li>first-of-type i last-of-type: en un conjunt d'etiquetes en comú, afecta a la primera o última etiqueta</li>
+                        <li>link: només és vàlida amb enllaços, diu com han de ser aquests enllaços sense visitar</li>
+                        <li>visited: també actúa sobre enllaços, però només sobre els ja visitats</li>
+                        <li>not(): aplica als elements que no compleixin cert requisit. No requereix selector inicial però en pot tenir</li>
+                        <li>empty: elements sense cap etiqueta a dins</li>
+                    </ul>
+                    <h2>Pseudoelements</h2>
+                    <p>Els pseudoelements són semblants a les pseudoclasses però les normes css establertes actúen només sobre certs continguts dins d'una etiqueta i no sobre tota l'etiqueta en si. S'escriuen així: selector::pseudo-element{};. Alguns d'ells són: </p>
+                    <ul>
+                        <li>first-letter: afecta a la primera lletra de l'element</li>
+                        <li>first-line: afecta a la primera línea de l'element</li>
+                        <li>selection: aplica quan es selecciona amb el ratolí</li>
+                        <li>marker: canvia els comptadors de les llistes, hem de posar una propietat "content" que serà la figura que el substitueix. En aquesta mateixa plana està aplicat l'efecte</li>
+                        <li>before i after: posa un contingut abans o després, segons el pseudoelement. Aquest contingut ha d'estar a la propietat "content"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

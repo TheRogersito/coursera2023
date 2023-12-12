@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elements media</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Elements media</h1>
+                <p>Els elements media són elements del html que permeten reproduir contingut de vídeo o d'àudio. Normalment els formats de vídeo suportats són els .mp4, .webm i .ogg, i els d'àudio són .mp3, .wav i .ogg</p>
+                <div class="col-12 col-lg-4">
+                    <h2>Etiquetes de vídeo</h2>
+                    <p>Les etiquetes de vídeo permeten l'implementació i l'ús d'arxius de vídeo. L'etiqueta és "video" i necessita una etiqueta source a dins amb dos atributs: "src", que seria l'adreça de l'arxiu i "type" hem de posar "video/format(mp4, webm... el que sigui)". Si posem l'atribut "controls" a l'etiqueta de video, farem que l'usuari pugui controlar-lo i si posem l'atribut "muted" estarà silenciat per defecte</p>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h2>Etiquetes d'àudio</h2>
+                    <p>Les etiquetes de video s'implementen igual que les d'àudio però fent servir l'etiqueta "audio". Podem fer que l'àudio es repeteixi infinitament posant la propietat loop dins de l'etiqueta "audio"</p>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <h2>Etiquetes d'imatge</h2>
+                    <p>Les etiquetes d'imatge a diferència de les de vídeo i àudio, no es tanquen; tenen l'atribut "src" elles mateixes sense necessitar una altre etiqueta "source". Per a millorar l'accessibilitat, podem posar un atribut "alt" amb un títol de la foto. Per a encara més accessibilitat, hem de posar l'etiqueta "img" abans d'una etiqueta "figcaption" que seria el peu de la foto i els dos dins d'una etiqueta "figure"</p>
+                    <p>Els formats d'imatge suportats pels navegadors són: .apng, .avif, .gif, .jpeg/.jpg, .png, .svg, .webp</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>iFrames</h2>
+                    <p>Els iFrames són etiquetes que són literalment peces d'altres webs que permeten l'execució d'aquestes altres webs de manera reduïda a la web en la que les implementem. Els atributs principals de iframe són:</p>
+                    <ul>
+                        <li>allow: Prohibeix permisos de la web anclada.Exemple: allow="camera 'none'; microphone 'none"</li>
+                        <li>sandbox: preveu o permet descàrreges i pop-ups. Exemple: allow-downloads, allow-forms</li>
+                        <li>name: el nom del iFrame: Exemple: name="closca"</li>
+                        <li>height i width: defineixen la mida del iFrame en px en alçada i amplada</li>
+                        <li>referrerpolicy: política per a comunicar a la web anclada qui l'està carregant. Pot tenir 3 valors:</li>
+                        <ul>
+                            <li>no-referrer: l'informació no serà compartida</li>
+                            <li>origin: l'informació serà compartida</li>
+                            <li>strict-origin: l'informació serà compartida només si es fa servir el mateix protocol de seguretat(http o https)</li>
+                        </ul>
+                        <li>src: origen de la web anclada. Exemple: src="google.com"</li>
+                        <li>loading: diu si el iFrame es carega quan la web en si es carregada(eager) o quan es mostra en pantalla(lazy)</li>
+                        <li>title: el títol del iFrame</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Elements canvas</h2>
+                    <p>Els elements canvas són un tipus especial de media que permet renderització en temps real. Hi ha 4 principalment:</p>
+                    <ul>
+                        <li>GIF i webP: són animacions que no donen cap interactivitat</li>
+                        <li>2DCanvas: permet animacions bidimensionals a la web amb interactivitat. Se sol fer servir per a fer videojocs en 2D i animacions</li>
+                        <li>WebGL: permet animacions 2D més complicades i videojocs en 3D perquè té accés a la GPU de l'ordinador</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
