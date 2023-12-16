@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Efectes CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>            
+    </head>
+    <body>
+        <style>
+            #exp{
+                background-color: aqua;
+                aspect-ratio: 1/1;
+                width:15%;
+                border-radius: 15%;
+                transition: 1.5s;
+            }
+            #exp:hover{
+                background-color: red;
+                margin-left:200px;
+                transform: rotate(540deg);
+                transition: 5s;
+            }
+            #esponja{
+                background-color: blueviolet;
+                aspect-ratio: 1/1;
+                width:15%;
+                border-radius: 15%;
+                margin:auto;
+                color: blueviolet;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2em;
+                animation: amogus 2s infinite;
+            }
+            @keyframes amogus{
+                50%{background-color: red;};
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <h1>Efectes CSS</h1>
+                <p>Els efectes són petites animacions o cosmètics en una web causats per una acció. Un efecte que ja has vist seria el "hover". Els efectes poden ajudar a destacar coses importants i millorar l'estètica, però també poden distrure l'usuari i enlentir la web</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Efectes de text</h2>
+                    <p>Hi ha diferents efectes que podem aplicar a textos serien aquests:</p>
+                    <ul>
+                        <li>text-overflow: determina què fa el text quan no hi cap sencer a la caixa que el conté. "ellipsis" fa que quan el text acabi en punts suspensius i aparegui sencer quan es fa un hover, "scroll" fa que surti una barra de desplaçament interior, "clip" fa el mateix que "ellipsis" sense els punts suspensius</li>
+                        <li>writing-mode: fa que el text canviï d'orientació. Fem que sigui vertical amb "vertical-rl"</li>
+                        <li>word-wrap: determina com les paraules passen a la següent línea. "break-word" fa que només hi hagi una paraula a cada línea i que hi hagi tantes línies com paraules</li>
+                        <li>text-shadow: posa una ombra al text. El com apareix l'ombra ho posem amb 4 variables: coordenada x, coordenada y, radi de l'ombra i color. Podem posar més d'una ombra alhora</li>
+                    </ul>
+                    <h2>Transformacions i transicions</h2>
+                    <p>Les transformacions són canvis en l'estil de certs elements fent servir el css i les transicions són el temps que duren aquestes transformacions. Per a aplicar aquestes característiques fem servir l'atribut "transform", que seria la transformació que fa l'element i a l'atribut "transition" determinem el temps que triga la transformació en fer-se</p>
+                    <p>Las transicions però, no són exclusives a l'atribut "transform", es poden aplicar a qualsevol canvi provocat per una pseudoclasse, com pots comprovar al requadre de baix</p>
+                    <div id="exp"></div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Animacions</h2>
+                    <p>Les animacions amb css generalment es fan amb la propietat "animation", que té diferents paràmetres que la defineixen. Els 4 primers paràmetres serien en nom de l'animació, la durada, quan deixa de repetir-se i delay</p>
+                    <p>Després d'establir la propietat "animation" als elements que cal, s'ha de definir quina és l'animació que volem. Ho fem amb una nova regla css que serà així: @keyframes nom_de_l'animació{from {inici_de_l'animació}; to {final_de_l'animació}}</p>
+                    <div id="esponja"><p>ඞ</p></div>
+                    <h2>Tècnica mixin</h2>
+                    <p>Per últim, la tècnica mixin és la de combinar unes quanter normes css en un bloc per a cridar-les en múltiples instàncies en la resta del codi css, seria com guardar-les en un objecte. La sintaxi seria aquesta:</p>
+                    <p>@mixin nomRegles{}; element{@include nomRegles};</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

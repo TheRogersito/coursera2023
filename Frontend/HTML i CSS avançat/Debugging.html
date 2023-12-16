@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Debugging</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>            
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Debugging</h1>
+                <p>El debugging és el procés de correcció del codi per a que quedi lliure d'errors</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Tipus d'errors</h2>
+                    <p>Generalment hi ha 3 tipus d'errors que es cometen durant l'escriptura del codi:</p>
+                    <ul>
+                        <li>Skill: són errors en "l'ortografia" del codi com no posar un ";", no tancar un parèntesi...</li>
+                        <li>Rule: són errors que apareixen quan no se segueixen les normes generals de codi, com posar un número com a primer caràcter del nom d'una class del html</li>
+                        <li>Knowledge: no són errors en si, més aviat complicacions en el codi per la falta de cert coneixement o mètode</li>
+                    </ul>
+                    <p>Una manera d'evitar errors en css és fer servir el menor nombre d'atributs possible o tenir en compte l'especificitat de les normes css, evitant posar selectors massa específics. També hem d'intentar recordar posar un ";" després de cada atribut.</p>
+                    <h2>Tractament d'errors en css</h2>
+                    <p>Normalment el css no detecta errors en el seu codi. Per a detectar-los quasi sempre hem de dependre d'una eina externa anomenada "linter tool" que detecta males praxis i patrons problemàtics en el codi</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Css específic de navegadors</h2>
+                    <p>Cada navegador d'internet té les seves pròpies normes css per defecte, com certs marges, tipografia de la lletra, tamany de títols, etc...</p>
+                    <p>Tambñe hi ha diferències entre navegadors en quant a compatibilitat, ja que alguns navegadors no suporten certs atributs css en algunes actualitzacions. Afortunadament hi ha algunes llibreries que faciliten la compatibilitat entre navegadors com Modernizer, Reset.css i Normalize.css</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
