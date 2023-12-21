@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ús i estilat de components</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Ús i estilat de components</h1>
+                <p>En aquesta secció aprendrem com estilar els omponenets de React</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Props</h2>
+                    <p>Els props són els paràmetres que es poden posar a les funcions dels components. L'ús de props ens permet un contingut més dinàmic, i una manera d'utilitzar-lo és fent que la crida del component tingui cert atribut i el component contingui una crida al propi atribut. Mira l'exemple:</p>
+                    <div class="col-6 fl">
+                        ReactDOM.createRoot(<br>
+                        document.querySelector('#root')<br>
+                        ).render(&lt;App title="Welcome" /&gt;)
+                    </div>
+                    <div class="col-6 fl">
+                        export function App(props){<br>
+                        return(<br>
+                        &lt;h1&gt;{props.title}&lt;/h1&gt;<br>
+                        );};
+                    </div>
+                    <h2>Ús del JSX</h2>
+                    <p>Com ja saps d'abans, el JSX és una extensió del Javascript que permet incloure codi html i css. A diferència del html, no podem fer servir la propietat "class" sinò que hem d'utilitzar la propietat "className" per a aconseguir el mateix propòsit</p>
+                    <p>Una manera fàcil de recordar com escriure en JSX és posar els elements i llenguatge HTML lliurement i la part en Javascript s'escriu dins de {}</p>
+                    <h2>Props children</h2>
+                    <p>L'idea del props children és la de fer que un component estigui dins un altre segons situació, que sol ser la de tenir un component que defineix uns estils css i l'altre el contingut, així podriem reciclar els estils per a altres, mira els exemples: </p>
+                    <div><div class="col-4 fl">
+                        export function Content(props){<br>
+                            return(<br>
+                                &lt;div className="test"&gt;<br>
+                                    &lt;p&gt;Exemple&lt;/p&gt;<br>
+                                &lt;/div&gt;<br>
+                            )}
+                    </div>
+                    <div class="col-4 fl">
+                        export function Style(props){<br>
+                            const est = {<br>
+                                color:red;<br>
+                                fontSize:44px;}<br>
+                            return(<br>
+                                &lt;div style={est}&gt;<br>
+                                    {props.children}<br>
+                                &lt;/div&gt;<br>
+                            )}
+                    </div>
+                    <div class="col-4 fl">
+                        export function App(props){<br>
+                            return(<br>
+                            &lt;Style&gt;<br>
+                            &lt;Content /&gt;<br>
+                            &lt;/Style&gt;<br>
+                            );};<br><br><br><br>
+                    </div></div>
+                    <p>En aquest cas, el component Content tindrà l'estil definit pel component Styles</p>
+                    <p>Una altre cosa que s'ha de saber, és que si es fa uns estils d'aquesta manera, els atributs que tenen noms amb guió, com font-size, han d'anar sense guions en format camelCase, font-size seria fontSize, margin-left seria marginLeft... També hem de posar els valors com a strings(entre cometes "") i separar cada atribut amb comes,</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

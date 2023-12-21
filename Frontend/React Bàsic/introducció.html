@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Introducció</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Introducció a React</h1>
+                <p>El React és una llibreria Javascript creada per Meta per a crear UI ràpides i accessibles. Webs com Instagram, Netflix o Airbnb ho fan servir</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Mòduls</h2>
+                    <p>Els mòduls són part d'un arxiu javascript que es poden exportar i importar a altres arxius javascript; aquests mòduls poden ser funcions.</p>
+                    <p>Per a exportar, podem fer-ho amb default o anomenat. El default es fa així: "export default a" o així "function a(){elquesigui}; export default a". El anomenat s'exporta així: "export function a(){elquesigui}" o així "function a(){elquesigui}; export {a}". L'exportació anomenada la podem realitzar tants cops com volguem, l'exportació per default només un cop</p>
+                    <p>Per a importar, a l'arxiu on importem els mòduls fem així: "import a from 'rutadelarxiu.js'" o "import {a} from 'rutadelarxiu.js'"</p>
+                    <h2>Components</h2>
+                    <p>Els components de React són bloc de codi reutilitzables. Cada component té certes funcions que no requereixen la modificació d'altres components, cosa que fa que cada treballador pugui treballar en cert component sense alterar el component del veí. Cada component té el seu propi html, css i javascript.</p>
+                    <p>Els components poden ser de dos tipus:</p>
+                    <ul>
+                        <li>Funcionals: són una funció simple de javascript</li>
+                        <li>Per classe: funcionen de manera semblant a les classes de javascript</li>
+                    </ul>
+                    <h1>Components funcionals</h1>
+                    <p>Els components funcionals són components emmagatzemats dins de funcions al javascript. Aquestes funcions retornen codi JSX, una extensió del javascript que permet l'escriptura de html.</p>
+                    <p>El component en si és un arxiu .js que ha de començar en majúscules. Aquest arxiu té la funció(amb un nom que comença en majúscules) que retorna el codi JSX del component</p>
+                    <p>Per a fer que un component cridi a un altre, ho fem amb la següent sintaxi: "&lt;nomdelafuncio /&gt;"</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Estructura de projecte</h2>
+                    <p>El React té la seva estructura pròpia de carpetes per a organitzar els components. Aquesta estructura es crea automàticament quan iniciem el React i es composa d'aquesta manera: </p>
+                    <ul>
+                        <li>Carpeta node_modules: conté una colecció de mòduls que fan funcionar el React. De moment la ignorarem</li>
+                        <li>Carpeta public: conté els assets que veurà l'usuari a la web, com les imatges, icones, videos... i el més important index.html</li>
+                        <li>Carpeta src: conté els components essencials per a fer funcionar el React:</li>
+                        <ul>
+                            <li>App.js: és l'erxius javascript que conté les instruccions per a renderitzar la web</li>
+                            <li>index.js: conté codi per a diverses funcionalitats de la web</li>
+                            <li>App.css: conté els estils pel App.js</li>
+                            <li>index.css: té els estils de la web en si</li>
+                            <li>App.test.js, setupTests.js i reportWebVitals.js: són fitxers relacionats amb el testejat de la web</li>
+                            <li>logo.svg: és un logo que apareix per defecte al localhost</li>
+                        </ul>
+                        <li>.gitignore: es fa servir en el control de versions, especifica quines carpetes i arxius han de ser ignorats</li>
+                        <li>pachage-lock.json: llista les dependències de la versió de l'app</li>
+                        <li>package.json: llista informació de la app</li>
+                        <li>README.md: dona informació bàsica del projecte</li>
+                    </ul>
+                    <p>Per a la creació de nous components, es recomana fer una carpeta nova dins de src i posar els components js allà</p>
+                    <h2>Importació de components</h2>
+                    <p>Per a importar components i que es mostrin en pantalla, primer de tot hem de posar l'instrucció d'exportació a l'arxiu del component i després posar l'instrucció d'importació a l'arxiu App.js i posar el nom del component dins del componentn App en aquest format: &lt;Component /&gt;</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

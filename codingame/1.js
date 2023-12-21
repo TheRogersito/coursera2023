@@ -117,3 +117,98 @@ for(let i = 1;i<=N;i++){
     }
     console.log(a)
 }
+
+
+// Flee or fight
+var inputs = readline().split(' ');
+const h = parseInt(inputs[0]);
+const d = parseInt(inputs[1]);
+const num = parseInt(readline());
+let en = []
+for (let i = 0; i < num; i++) {
+    var inputs = readline().split(' ');
+    eh = parseInt(inputs[0]);
+    ed = parseInt(inputs[1]);
+    en.push([eh,ed])
+}
+while(true){
+    if(h<0){
+        m="flee";
+        break
+    }
+    for(ec in en){
+        en[ec][0] = en[ec][0]-d;
+        if(en[ec][0]<0){
+            en.splice(en[ec],1)
+        }
+        if(ec.length===0){
+            m="fight";
+            break;
+        }
+    }
+}
+console.log(m);
+
+
+var inputs = readline().split(' ');
+const wid = parseInt(inputs[0]);
+const hei = parseInt(inputs[1]);
+for(i=0;i<hei;i++){
+    l='';
+    a=i%5
+    if(i===0||i===hei-1){
+        for(j=0;j<wid;j++){
+            l=l+"#"
+        }
+    }else
+    switch(a){
+        case 0:
+            for(j=0;j<wid;j++){
+                if(j===0||j===wid-1){
+                    l=l+'#'
+                }else{
+                    l=l+'/'
+                }
+            }
+            break;
+            case 1:
+            for(j=0;j<wid;j++){
+                if(j===0||j===wid-1){
+                    l=l+'#'
+                }else{
+                    l=l+'*'
+                }
+            }
+            break;
+            case 2:
+            for(j=0;j<wid;j++){
+                if(j===0||j===wid-1){
+                    l=l+'#'
+                }else{
+                    l=l+'.'
+                }
+            }
+            break;
+            case 3:
+            for(j=0;j<wid;j++){
+                if(j===0||j===wid-1){
+                    l=l+'#'
+                }else{
+                    l=l+'-'
+                }
+            }
+            break;
+            case 4:
+            for(j=0;j<wid;j++){
+                if(j===0||j===wid-1){
+                    l=l+'#'
+                }else{
+                    l=l+'_'
+                }
+            }
+            break;
+            default:
+            console.log("Menjam l'ou");
+    }
+    console.log(l)
+}
