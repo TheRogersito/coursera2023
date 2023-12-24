@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Events</h1>
+                <p>Els events són moments en els que certa interactivitat de l'usuari activa l'execució d'alguna part del codi, com apretar un botó. Hi ade molts tipus: clipboard, composition, keyboard, mouse, selection, touch, wheel, animation...</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Sintaxi dels events al React</h2>
+                    <p>Com ja saps, React fa servir JSX i aquest s'escriu d'una manera diferent del Javascript. En aquest sentit, els events van escrits en camelCase i a la crida d'aquests no hem de posar un parèntesi final, també hem d'evitar posar cometes "" i fer servir corxeres {} emn el seu lloc, seria una cosa així: onClick={laFuncio}</p>
+                    <h2>Comunicació de components parents</h2>
+                    <p>Tenint en compte que els components poden ser cridats tants cops com volguem, l'opció de tenir un sol component quan s'hagi de repetir cert element en el document és la manera més encertada per a aplicar aquesta repetició, ja que l'edició d'aquest mateix component farà que tots els elements que el contenen siguin modificats</p>
+                    <h2>State data</h2>
+                    <p>El state data són dades contingudes dins d'un component child, a diferència dels props, que són dades contingudes al component parent. Aquests states fan que un component pugui ser de tipus diferents: stateful, que significa que el component té variables amb les que funciona(normalment amb un hook useState) i stateless, que vol dir que no té cap variable</p>
+                    <h2>Hooks</h2>
+                    <p>Els hooks són funcions que es solen fer servir per a fer seguiment de components(un boolean, número de cops que es fa algo...). El hook s'inicialitza així: import {useState} from 'react';. Tingues en compte que useState és un sol hook, hi ha d'altres també com useReaf, useContext o useMemo</p>
+                    <p>Després, dins del component, fora del return, hem d'inicialitzar la funció amb un array deconstruit. Un exemple seria aquest: const[state, setState] = useState(false);</p>
+                    <ul>
+                        <li>state: variable que fa el seguiment de l'estat</li>
+                        <li>setState: mètode que canvia l'estat</li>
+                        <li>useState: el hook en si, sempre és useHook</li>
+                        <li>false: el valor per defecte que té l'estat</li>
+                    </ul>
+                    <p>Per a fer funcionar el hook després d'això, és fundamental que en algún punt hi hagi: algún element que utilitzi o que depengui del valor de "state" i una crida a la funció "setState" que canviï l'estat de "state"</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
