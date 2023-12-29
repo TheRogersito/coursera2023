@@ -26,10 +26,32 @@
                     <ul>
                         <li>state: variable que fa el seguiment de l'estat</li>
                         <li>setState: mètode que canvia l'estat</li>
-                        <li>useState: el hook en si, sempre és useHook</li>
+                        <li>useState: el hook en si, sempre és useState</li>
                         <li>false: el valor per defecte que té l'estat</li>
                     </ul>
                     <p>Per a fer funcionar el hook després d'això, és fundamental que en algún punt hi hagi: algún element que utilitzi o que depengui del valor de "state" i una crida a la funció "setState" que canviï l'estat de "state"</p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                    <h2>Prop drilling</h2>
+                    <p>El prop drilling és l'idea de passar dades entre components fent servir props a través de més d'un nivell, com passar dades d'un component al seu child i després que aquest child el pasi al seu child. Això és poc pràctic, ja que complica les coses innecessàriament</p>
+                    <p>El prop drilling implica el State lifting, que vol dir passar el codi que determina l'estat d'un component al component parent per a que altres components germans hi tinguin accés(es passa codi d'un lloc a l'altre tal qual)</p>
+                    <h2>API Context</h2>
+                    <p>La context API és un api que ens permet passar els estats dels components directament als altres components on els necessitem, sense haver de fer prop drilling</p>
+                    <p>Per a poder-ho fer servir, hem de crear un component que englobi l'entorn on volem fer servir els estats compartits, inicialitzant en aquest component la api en si amb la comanda: "const VariableContext = React.createContext();"</p>
+                    <p>Després, hem de fer un array que desi els estats que ens interessa. A l'exemple li direm array1</p>
+                    <p>A continuació, una fonció que contigui un hook a dins, mira l'exemple:</p>
+                    <div class="exemple">
+                        const funcioProveidora = ({children}) => {<br>
+                            const [llista, setLlista] = React.useState(array1);<br>
+                            return(<br>
+                                &lt;VariableContext value={{llista}}&gt;<br>
+                                    {children}<br>
+                                &lt;VariableContext&gt;<br>
+                            )<br>
+                        }<br>
+                    </div>
+                    <p>Al final del component hem de exportar això fent: "export const funcioComEsDigui = () => React.useContext(VariableContext)"</p>
+                    <p>Després, al component on importem, ho fem així: "import {funcioComEsDigui} from "../rutaQueSigui" i dins de la funció del component podem desar les dades importades a una variable així: "const {variableQueSigui} = funcioComEsDigui()" i podrem fer servir les dades al component nou</p>
                 </div>
             </div>
         </div>
