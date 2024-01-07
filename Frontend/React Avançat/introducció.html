@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React Avançat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>React avançat</h1>
+                <p>En aquest mòdul aprendrem més sobre React</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Llistes</h2>
+                    <p>Al React es poden fer llistes que es poden transformar amb el mètode map(), que actua sobre un array. El map() agafa els elements de l'array i filtra les dades de tots els elements per a tenir només el que ens interessa, per exemple un array amb objectes que tenen 5 variables a dins podem fer que ens doni info de2 de les variables de cada objecte</p>
+                    <div class="exemple">
+                        function Component(){<br>
+                            const llistaFiltrada = objectesComplets.map(objecte => {<br>
+                                const objecteFiltrat = `${objecte.nom} - ${objecte.preu}`<br>
+                                return &lt;li&gt;{objecteFiltrat}&lt;/li&gt;<br>
+                            })<br>
+                            return(<br>
+                                &lt;div&gt;<br>
+                                &lt;ul&gt;<br>
+                                {llistaFiltrada}<br>
+                                &lt;/ul&gt;<br>
+                                &lt;/div&gt;<br>
+                            )}<br>
+                    </div>
+                    <p>Aquest component retornaria una llista de l'array objectesComplets amb les dades nom i preu de cada objecte</p>
+                    <h2>Keys</h2>
+                    <p>Les keys són identificadors per a localitzar items, cosa que ajuda al react a tractar elements quan hi ha algún canvi. Les keys s'implementen com a una propietat dels elements html que gestiona React i l'ajuden a saber quins elements nous s'han creat, esborrat o mogut. Una mala implementació de les keys afecta negativament al rendiment, així que utilitza-les bé</p>
+                    <h2>Components controlats</h2>
+                    <p>Els components controlats o controlled components són components dels quals es pot controlar el seu estat(variables dins del component) mitjançant la pàgina compilada i carregada. Un exemple seria els formularis, que podem fer que l'estat canviï amb un input en qualsevol moment amb una funció handleChange. Fent això, assegurem que les dades de l'estat del react i del formulari siguin sempre equivalents i es puguin validar al moment. Això ho fem amb les següents lìnies de codi dins  l'estat del component:</p>
+                    <div class="exemple">
+                        const [value, setValue] = useState("");<br>
+                        const handleChange = (e) => {<br>
+                        setValue(e.target.value)<br>
+                        }<br>
+                    </div>
+                    <p>Després d'aquest codi, hem de fer que cada input executi la funció handleChange a cada canvi, cosa que fem amb la propietat onChange. Aquest tròs de codi és vàlid per un sol valor, si es vol fer més s'ha de repetir codi</p>
+                    <p>No obstant, hi ha alguns inputs d'un formulari que no poden ser controlats, com el type="file"</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Formularis</h2>
+                    <p>Com has vist abans, els formularis a React funcionen diferent, aquí veuràs una llista de característiques que ajuden a entendre-ho</p>
+                    <ul>
+                        <li>Per a donar un propósit al formulari, a l'etiqueta &lt;form&gt; hem de posar la propietat onSubmit={handleSubmit} i a l'estat del component posar aquesta funció handleSubmit i definir què farà</li>
+                        <li>Podem evitar que la pàgina es recarregui posant un paràmetre a la funció handleSubmit(per exemple, e) i cridar dins de la funció al mètode e.preventDefault();</li>
+                        <li>Buidem els camps del formulari fent un set amb un paràmetre de buit, per exemple: setName("")</li>
+                        <li>Podem inhabilitar el botó de submit si hi ha camps buits fent que aquest tingui la propietat disabled i com a valor un invers dels inputs requerits(amb un ! al davant)</li>
+                        <li>Si volem que clicar un label posi el cursor de navegació(no el ratolí) sobre el camp que descriu, posem una propietat htmlFor al label i com a valor la id de l'input</li>
+                    </ul>
+                    <p>Noteta: per a fer un if dins del html hem de fer-ho dins de {} i allà podem carregar components. Es recomana el if ternari</p>
+                    <h2>Context</h2>
+                    <p>El context és la solució al props drilling, una eina que permet passar props a un nivell baix des d'un nivell alt sense passar per tots els nivells del mig que no ho necessiten</p>
+                    <p>És una manera de compartir dades de manera global a tota l'app. Per a fer que funcioni, hem de fer un component que actúi com a context i posar un codi semblant a aquest:</p>
+                    <div class="exemple">
+                        import{createContext, useContext, useState} from "react";<br>
+                        const UserContext = createContext(undefined);<br>
+                        export const UserProvider = ({children}) => {<br>
+                            const [user] = useState({<br>
+                                name: "Charlie",<br>
+                                email: "charlieharper@example.com"<br>
+                            })<br>
+                            return &lt;UserContext.Provider value={{user}}&gt;&lt;/UserContext.Provider&gt;}<br>
+                            export const useUser = () => useContext(UserContext);
+                    </div>
+                    <p>En aquest exemple, l'objecte user l'hem creat com a exemple, normalment això requereix obtenir dades d'una altre banda fent un "fetch"</p>
+                    <p>Finalment, per a poder importar aquest component Context fem import de {UserProvider, useUser} from l'arxiu que sigui, hem de posar l'etiqueta &lt;UserContext.Provider&gt; wrapping el component &lt;App /&gt; dins el component Root. Finalment podem fer servir el context definint una variable que executi la funció "useUser()"</p>
+                    <p>Noteta: el paràmetre value que té el component a retornar &lt;ElQueSigui.Provider&gt; ha de tenir com a valor un objecte que té les variables inicialitzades abans amb la funció useState(). Mira l'exemple i segur que ho entens</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

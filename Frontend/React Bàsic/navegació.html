@@ -47,6 +47,10 @@
                     <p>Se sol emmagatzemar els assets de dues maneres: si l'app ho necessita per a iniciar-se deixar-ho a la carpeta "public", si no es sol deixar a un carpeta "Assets" dins de "src"</p>
                     <p>Un cop l'asset es troba emmagatzemat, la millor manera de fer-ho servir és tractar-lo com es faria amb el html base però cambiant certa sintaxi, per exemple per a posar una imatge seria: &lt;img src={require('/rutaDeLaImatge/foto.jpg')}&gt;</p>
                     <p>Si t'hi fixes, ara necessitem una funció require per a cridar l'asset. També es pot fer amb un import, però això complicaria el codi amb un excés d'imports</p>
+                    <h2>Àudio i video</h2>
+                    <p>Per a posar videos i àudios a una app react, es pot fer servir el mètode tradicional de fer servir l'etiqueta html &lt;video&gt; però no es recomana. Per a obtenir una experiència més versàtil és millor fer servir un package de react per a posar videos anomenat "react-player"</p>
+                    <p>react-player ens permet posar videos locals o online com per exemple de youtube. Un cop instalat el paquet fem un import de "ReactPlayer" from "react-player" i ja el podem fer servir. Podem ser més específics i importar de "react-player/youtube", per exemple</p>
+                    
                 </div>
             </div>
         </div>

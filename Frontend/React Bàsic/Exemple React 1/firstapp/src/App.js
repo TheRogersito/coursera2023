@@ -1,5 +1,6 @@
 import './App.css';
 import Card from "./Card.js";
+import VideoA from "./VideoA.js";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Card h2="Segon h2: No m'agrada la mermelada" h3="Segon h3: Les costelles estan mal fetes"/>
       <Card h2="Tercer h2: Poca-solta ens estan robant" h3="Tercer h3: Són enriquidors culturals"/>
       <img src={require("./Assets/jojo.png") } alt="jojo"/>
+      <VideoA url={"https://www.youtube.com/watch?v=018P39kGXdU&ab_channel=sopitadecerebro"}/>
     </div>
   );
 }

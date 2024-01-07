@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hooks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Hooks</h1>
+                <p>En aquest apartat mirarem els hooks de React, que són funcions de react que faciliten l'escriptura i manteniment del codi</p>
+                <div class="col-12 col-lg-6">
+                    <h2>useState</h2>
+                    <p>useState és un hook que controla i consulta els estats d'un component. S'inicialitza amb un array desestructurat que té com a valor el hook en si. Mira l'exemple i ho entendràs millor</p>
+                    <div class="exemple">
+                        const [variable, setVariable] = useState("tronc")
+                    </div>
+                    <p>En aquest exemple has de tenir en compte aquests 3 elements:</p>
+                    <ul>
+                        <li>variable: és el nom de la variable que forma part del state del component</li>
+                        <li>setVariable: és la funció que permet un canvi de valor de la variable. S'ha de posar el nou valor com a paràmetre per a que funcioni quan s'invoca</li>
+                        <li>useState("tronc"): és el hook en si; el paràmetre és el valor inicial de la variable</li>
+                    </ul>
+                    <p>Hi ha una manera òptima de fer servir el setVariable en objectes dels quals només volem fer un canvi, que consisteix en fer una còpia de l'objecte, fer el canvi i retornar l'objecte canviat. Mira l'exemple:</p>
+                    <div class="exemple">
+                        setVariable(prevState => {return {...prevState, name:"Joseph"}});
+                    </div>
+                    <p>A l'exemple, el paràmetre prevState és la còpia de l'objecte actual, ...prevState fa referència a tots els elements de l'objecte no alterats i a partir d'allà podem fer els canvis que volguem. Hi ha altres maneres d'alterar objectes amb el useState però aquesta és la millor</p>
+                    <h2>useEffect</h2>
+                    <p>El useEffect és un hook que gestiona efectes, que són parts d'una funció que tenen algún canvi sobre variables de fora de la funció o que criden un mètode d'una API(aquestes funcions són anomenades funcions impures i les que no criden cap API són funcions pures). Alguns exemples de crides a API són: el console.log, fer un fetch o accedir a la geolocalització</p>
+                    <p>La sintaxi d'un useEffect seria similar a això:</p>
+                    <div class="exemple">
+                        useEffect (() => {document.title=`Pàgina de &{user.current}`}, [user.current])
+                    </div>
+                    <p>Els elements que hi ha a aquesta línia de codi tenen les segûents funcions:</p>
+                    <ul>
+                        <li>useEffect: és el hook en si, una funció que requereix com a paràmetre una altre funció a dins sense paràmetres com a primer paràmetre i un array com a segon paràmetre</li>
+                        <li>{document.title=`Pàgina de &{user.current}`}: és la funció que executa aquest hook, en aquest cas canviar el valor de document.title</li>
+                        <li>[user.current]: el segon paràmetre de useEffect, anomenat dependency array. Quan la funció s'executa per primer cop useHook desa el valor de totes les variables dins d'aquest array, si la funció es torna a cridar, el hook compara el valor en aquell moment i el valor que tenia en el moment que ho ha desat abans i només executa la funció si al menys un valor ha canviat. Si deixem un array buit la funció només serà executada el primer cop</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Regles dels hooks</h2>
+                    <p>Els hooks de React tenen algunes normes que s'han de seguir per a que el seu funcionament estigui garantitzat, que serien aquestes:</p>
+                    <ul>
+                        <li>Cridar hooks només dins de components i no des de fora d'un component en javascript pur</li>
+                        <li>Els hooks no s'han de cridar a la part d'un return d'un component, si és possible s'han de posar a les primeres línies del component</li>
+                        <li>Es poden fer servir múltiples state i effect hooks</li>
+                        <li>quan es fa una crida d'un hook amb una condició, la condició en si ha d'estar dins el hook i no al revés</li>
+                    </ul>
+                    <h2>Fetching</h2>
+                    <p>El fetching és l'acció de treure informació d'algún lloc per a poder-la fer servir al codi. Al javascript es fa amb la funció Fetch i utilitza molt activament la programació asincronitzada</p>
+                    <p>Un cop executada la funció fetch, el codi següent se segueix executant a la vegada que la funció fetch i els seus subseqüents. Mira l'exemple:</p>
+                    <div class="exemple">
+                        console.log("Primera línea")<br>
+                        fetch("https://www.exemple.com/api/?user=1").then(response => response.json()).then(data => console.log(data))<br>
+                        console.log("Línea segona")
+                    </div>
+                    <p>En aquest exemple, "Primera línea" i "Línea segona" anirien seguides i les accions del fetch se seguirien executant sense parar el codi</p>
+                    <p>Com pots haver deduït, el fetch fa servir una API del navegador, per tant per a fer-lo servir a react, convé ficar-lo dins d'un useEffect. La manera òptima de fer-ho seria posant el fetch en si en una funció i cridar-la dins del useEffect, mira l'exemple:</p>
+                    <div class="exemple">
+                        const fetchData = () => {<br>
+                            fetch("https://www.exemple.com/api/?user=1").then(response => response.json()).then(data => setUser(data))}<br>
+                        useEffect (() => {fetchData()};<br>
+                        , []);
+                    </div>
+                    <p>També cal tenir en compte que el fetch pot fallar o anar tard, així que convé que el return del component tingui un format condicional d'aquesta manera: </p>
+                    <div class="exemple">
+                        return Object.keys(dades).length > 0 ? (<br>
+                            &lt;div&gt;<br>
+                            &lt;h1&gt;Les dades són{dades.name[0]}&lt;/h1&gt;<br>
+                            &lt;/div&gt;<br>
+                        ) : (<br>
+                            &lt;div&gt;<br>
+                            &lt;h1&gt;No hi ha dades encara&lt;/h1&gt;<br>
+                            &lt;/div&gt;<br>
+                        )
+                    </div>
+                    <p>En aquest exemple, el component renderitzat és diferent si el fetch falla i no proporciona l'objecte dades</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
