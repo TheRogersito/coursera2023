@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JSX</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>JSX en profunditat</h1>
+                <p>Si no recordes malament, JSX és una extensió de Javascript que és utilitzada per react per a descriure l'aparença de la UI. El que fa react per a renderitzar la web, és traduir els components en objectes javascript que anomena "elements"</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Composició de components amb children</h2>
+                    <p>A part de la manera tradicional de posar components dins d'altres fent que siguin children, hi ha una altre manerade fer que components siguin children</p>
+                    <p>Consisteix en invocar un component ja definint el seu contingut i que aquest element invocat tingui un objecte {props.children} a dins. Mira l'exemple:</p>
+                    <div class="exemple exempleMeitat" style="margin:5px; width:48%">
+                        function Dialog(props){<br>
+                            return(<br>
+                                &lt;div className="dia"&gt;<br>
+                                {props.children}<br>
+                                &lt;/div&gt;<br>
+                            )<br>
+                        }
+                    </div>
+                    <div class="exemple exempleMeitat">
+                        function ConfirmDialog(props){<br>
+                            return(<br>
+                                &lt;Dialog color="red"&gt;<br>
+                                    &lt;h1 className="Dialog-title"&gt;<br>
+                                    The confirmation is here<br>
+                                    &lt;/h1&gt;<br>
+                                &lt;/Dialog&gt;<br>
+                            )}
+                    </div>
+                    <p>En aquest exemple, el contingut de ConfirmDialog es renderitza dins del component Dialog "substituïnt" el {props.children}</p>
+                    <p>El contingut de {props.children}, o el que és el mateix, el que el substitueix, pot ser qualsevol codi en JSX, que poden ser, text, funcions, variables, components... De tot</p>
+                    <h2>Manipulació de children</h2>
+                    <p>Per a manipular el contingut que apareix a {props.children}, ho podem fer amb dos APIs de React que són: React.cloneElement i React.children</p>
+                    <p>React.cloneElement ens permet modificar o ampliar les propietats del children i extendre la seva funcionalitat. Accepta dos arguments, el primer és l'element a clonar i el segon és un objecte que conté les propietats noves o modificades</p>
+                    <p>React.children permet manipular els elements dins del children tractant-los com un array. Un mètode molt utilitzat amb aquesta API és React.children.map per a tractar els elements en un bucle i actuar sobre cada un</p>
+                    <p>Noteta: recorda que pots fer servir el spread operator amb arrays, objectes i strings per a copiar dades dels objectes originals com a propietats</p>
+                    <h2>Higher Order Components</h2>
+                    <p>Els Higher Order Components són components que en si són una funció que agafa un component i en retorna un de nou, canviant o extenent la seva funcionalitat, podent definir llògica al HOC i compartint-la amb diversos components</p>
+                    <p>La sintaxi d'un HOC i de la seva invocació seria així</p>
+                    <div class="fl">
+                        <div class="exemple exempleMeitat">
+                            const ComponentHoc = (ComponentWrap) => {<br>
+                                const nousProps = {color: blue}<br>
+                                return(originalProps) => {<br>
+                                    return &lt;ComponentWrap nousProps={nousProps} {...originalProps} /&gt;;<br>
+                                };};
+                        </div>
+                        <div class="exemple exempleMeitat">
+                            const ComponentMillorat = ComponentHoc(ComponentWrap);<br>
+                            const Component = (props) =>{<br>
+                            return &lt;ComponentMillorat /&gt;;}
+                        </div>
+                    </div>
+                    <p>Al requadre de l'esquerra hi ha el HOC i al de la dreta hi és l'aplicació del HOC al component existent anomenat ComponentWrap</p>
+                    <p>Els HOC han d'ampliar funcionalitat, no canviar-la, així que manre no fagin una funció HOC de nom ComponentWrap, tot anirà bé</p>
+                </div>
+                <div class="col-12 col-lg-6">    
+                    <h2>Render Props</h2>
+                    <p>La tècnica de Render Props és una manera de renderitzar dades que proporciona un component fent que aquest no retorni html sinó una funció render amb les dades com a paràmetre. Després és suficient amb posar la propietat render a la crida del component i que tingui valor una funció tenint com a paràmetre un objecte(les dades agafades del component) que retorna el html</p>
+                    <p>Un exemple d'implementació seria:</p>
+                    <div class="exemple">
+                        conts DataFetcher =({render,url}) => {<br>
+                            const [data, setData] = useState([]);<br>
+                            useEffect(()=>{<br>
+                                setData(["pizza","hamburguesa","caldo"]);<br>
+                            },[]);<br>
+                            return render(data)<br>
+                        }<br>
+                        const Counter = () =>{<br>
+                        return(<br>
+                            &lt;DataFetcher url="www.hola.com" render={(data) => &lt;p&gt;{data.length} coses de menjar&lt;/p&gt;}/&gt;<br>
+                        );};
+                    </div>
+                    <h2>Llibreries de testing</h2>
+                    <p>El react té llibreries que automatitzen el procés de testejar el codi per a que funcioni correctament. Abans de res però, llistem algunes bones pràctiques en el testejat</p>
+                    <ul>
+                        <li>Evitar incloure detalls de l'implementació</li>
+                        <li>Treballar amb nòduls del DOM</li>
+                        <li>Simular un ús real de l'app</li>
+                        <li>Fer que els tests es puguin mantenir durant la major part del desenvolupament possible</li>
+                    </ul>
+                    <p>Una eina per testejar el react s'anomena Jest. Jest és una eina que automatitza tests i dóna accés a un DOM virtual propi anomenat jsdom, que és una simplificaió del DOM real. Jest té una bona velocitat d'iteració i característiques poderoses com fer Mocking per a simplificar funcions</p>
+                    <p>React Testing Library és una altre eina per a testejar react, té moltes utilitats i compleix les millors pràctiques de testing. Una utilitat és la de testejar components independentment sense dependre en detalls d'implementació</p>
+                    <p>Els tests que volem fer han de posar-se a l'arxiu App.test.js que crea el react per defecte. Un exemple d'un test seria això:</p>
+                    <div class="exemple">
+                        test("nom del test",() => {<br>
+                            render(&lt;App /&gt;);<br>
+                            const elementBuscat = screen.getTextBy("JSX en profunditat");<br>
+                            expect(elementBuscat).toBeInDocument();<br>
+                        });
+                    </div>
+                    <ul>
+                        <li>test():és la funció que declara el codi com un test. Accepta dos paràmetres, el nom del test i una funció amb el codi a testejar</li>
+                        <li>render(&lt;App /&gt;): l'invocació del componenta testejar</li>
+                        <li>screen.getTextBy("JSX en profunditat"): és una funció que busca cert text en pantalla, en aquest cas el text és "JSX en profunditat". Aquesta cerca s'ha desat a la variable elementBuscat</li>
+                        <li>expect(elementBuscat).toBeInDocument(): la part de expect(elementBuscat) és iniciar una expectativa sobre certa variable, en aquest cas elementBuscat i la part de toBeInDocument() és el que s'espera de la variable, en aquest cas estar al document</li>
+                    </ul>
+                    <h2>Integració contínua</h2>
+                    <p>L'integració contínua és una tècnica que fan servir els desenvolupadors en la que es puja múltiples cops el codi al servidor al dia. Això executa certs scripts automàticament que testejen el codi i intenten dir on està l'error</p>
+                    <p>Aquesta tècnica és popular, ja que generalment aumenta la productivitat fent que cada treballador se centri en un problema diferent a petita escala i es troben bugs més fàcilment</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
