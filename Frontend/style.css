@@ -1,0 +1,77 @@
+#container li::marker{
+    content:"ඞ ";
+    color:blue
+}
+#titol-absolut{
+    text-align: center;
+    font-size:2.3em;
+    margin-top:50px;
+    margin-bottom:25px;
+}
+nav, #llista2{
+    display:flex;
+    margin:auto;
+    align-items: center;
+}
+nav ul,#llista2 ul{
+    list-style-type: none;
+    margin:auto;
+}
+nav li,#llista2 li{
+    padding:10px;
+    border:0;
+    width:max-content;
+    display:inline-block;
+}
+#llista1 button, #llista2 button{
+    padding:10px;
+    min-width:150px;
+    border:0;
+    cursor:default;
+    border-radius:10px;
+}
+nav button:hover,#llista2 button:hover{
+    background-color: rgb(201, 201, 201);
+}
+#exp{
+    background-color: aqua;
+    aspect-ratio: 1/1;
+    width:15%;
+    border-radius: 15%;
+    transition: 1.5s;
+}
+#exp:hover{
+    background-color: red;
+    margin-left:200px;
+    transform: rotate(540deg);
+    transition: 5s;
+}
+#esponja{
+    background-color: blueviolet;
+    aspect-ratio: 1/1;
+    width:15%;
+    border-radius: 15%;
+    margin:auto;
+    color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    animation: amogus 2s infinite;
+}
+@keyframes amogus{
+    50%{background-color: red;};
+}
+.fl{
+    float:left;
+}
+.exemple{
+    background-color: rgba(0, 0, 0, 0.185);
+    border-radius: 15px;
+    padding:10px
+}
+.exempleMeitat{
+    margin:5px;
+    width:48%;
+    float:left;
+}

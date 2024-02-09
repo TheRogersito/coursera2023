@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Frontend apunts</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="data.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1 id="titol-absolut">Frontend apunts</h1>
+        <nav id="llista1">
+            <ul>
+                <li><button onClick="canviLlista2(llista.http)">HTTP</button></li>
+                <li><button onClick="canviLlista2(llista.htmlCss)">HTML i CSS avançat</button></li>
+                <li><button onClick="canviLlista2(llista.javas)">Javascript</button></li>
+                <li><button onClick="canviLlista2(llista.git)">Control de versions</button></li>
+                <li><button onClick="canviLlista2(llista.disseny)">Disseny</button></li>
+                <li><button onClick="canviLlista2(llista.react)">React</button></li>
+            </ul>
+        </nav>
+        <div id="void"></div>
+        <div id="llista2">
+            <ul>
+                <li><button onClick="canviResta(http.http)">Intro</button></li>
+                <li><button onClick="canviResta(http.tags)">Tags</button></li>
+                <li><button onClick="canviResta(http.css)">CSS</button></li>
+                <li><button onClick="canviResta(http.bootstrap)">Bootstrap</button></li>
+                <li><button onClick="canviResta(http.react)">React introducció</button></li>
+            </ul>
+        </div>
+        <div id="container" class="container"></div>
+    </body>
+</html>
