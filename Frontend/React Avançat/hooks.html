@@ -42,8 +42,6 @@
                         <li>{document.title=`Pàgina de &{user.current}`}: és la funció que executa aquest hook, en aquest cas canviar el valor de document.title</li>
                         <li>[user.current]: el segon paràmetre de useEffect, anomenat dependency array. Quan la funció s'executa per primer cop useHook desa el valor de totes les variables dins d'aquest array, si la funció es torna a cridar, el hook compara el valor en aquell moment i el valor que tenia en el moment que ho ha desat abans i només executa la funció si al menys un valor ha canviat. Si deixem un array buit la funció només serà executada el primer cop</li>
                     </ul>
-                </div>
-                <div class="col-12 col-lg-6">
                     <h2>Regles dels hooks</h2>
                     <p>Els hooks de React tenen algunes normes que s'han de seguir per a que el seu funcionament estigui garantitzat, que serien aquestes:</p>
                     <ul>
@@ -52,6 +50,15 @@
                         <li>Es poden fer servir múltiples state i effect hooks</li>
                         <li>quan es fa una crida d'un hook amb una condició, la condició en si ha d'estar dins el hook i no al revés</li>
                     </ul>
+                    <h2>useRef</h2>
+                    <p>useRef és un hook que permet crear objectes que fan referència a elements del DOM dins de react. Per a fer-ho necessitem 2 elements: </p>
+                    <ul>
+                        <li>Una variable que actúa com a l'objecte que fa referència a l'element del DOM, s'escriuria així: "const objecte = React.useRef(null)"</li>
+                        <li>L'etiqueta de html a la qual fa referència, s'escriuria així: "&gt;input ref={objecte} type='text' /&lt;"</li>
+                    </ul>
+                    <p>Un cop iniciats aquests codis, les funcions que es fagin servir a l'objecte "objecte" com per exemple "objecte.current.focus()" actuaràn sobre l'input al qual hem aplicat la referència</p>
+                </div>
+                <div class="col-12 col-lg-6">
                     <h2>Fetching</h2>
                     <p>El fetching és l'acció de treure informació d'algún lloc per a poder-la fer servir al codi. Al javascript es fa amb la funció Fetch i utilitza molt activament la programació asincronitzada</p>
                     <p>Un cop executada la funció fetch, el codi següent se segueix executant a la vegada que la funció fetch i els seus subseqüents. Mira l'exemple:</p>
@@ -81,6 +88,33 @@
                         )
                     </div>
                     <p>En aquest exemple, el component renderitzat és diferent si el fetch falla i no proporciona l'objecte dades</p>
+                    <h2>useReducer</h2>
+                    <p>El hook useReducer és semblant al useState però utilitza una funció personalitzada per a canviar els seus valors. Se sol fer servir amb objectes, arrays i altres variables complexes. Mira l'exemple:</p>
+                    <div class="exemple">
+                        const reducer = (estat, action) => {<br>
+                            if(action.type === "buy") return {money: estat.money-10};<br>
+                            return estat;<br>
+                        }<br>
+                        function App(){<br>
+                            const initialState = {money: 100};<br>
+                            const [state, dispatch] = useReducer(reducer, initialState)<br>
+                            return(<br>
+                                &lt;h1&gt;Diners: {state.money}&lt;/h1&gt;<br>
+                                &lt;button onClick={() => dispatch({type: "buy"})}&gt;Comprar&lt;/button&gt;<br>
+                            )};<br>
+                    </div>
+                    <ul>
+                        <li>state: variable on s'emmagatzemen els valors de l'estat</li>
+                        <li>dispatch: funció a la que s'ha de cridar quan es vol executar la funció del canvi de valor</li>
+                        <li>useReducer: hook en si</li>
+                        <li>reducer: funció del canvi de valor, la que s'executa quan es crida la funció dispatch als elements renderitzats</li>
+                        <li>initialState: valor inicial de l'estat, en aquest cas un objecte que té a dins la variable money amb valor 100</li>
+                        <li>estat: paràmetre de la funció reducer que és el pont d'accés als valors de state</li>
+                        <li>action: segon paràmetre de la funció reduce, definim de quin tipus és a la crida de dispatch i la funció reducer actuarà en conseqüència</li>
+                    </ul>
+                    <h2>Hooks personalitzats</h2>
+                    <p>Per a acabar amb els hooks, has de saber que es poden crear hooks personalitzats que no són més que funcions que es desen en el seu propi fitxer i que es poden importar com un component simple</p>
+                    <p>La diferència entre un component simple i un hook personalitzat, és que el component dona un return amb elements html renderitzables mentre que el hook personalitzat no, és una simple funció. Per a que el hook personalitzat sigui "vàlid", ha de fer servir al menys un hook de react</p>
                 </div>
             </div>
         </div>

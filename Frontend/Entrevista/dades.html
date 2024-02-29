@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estructures de dades</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Estructures de dades</h1>
+                <p>En aquesta part aprenem l'evaluació d'estructures de dades que es solen trobar en entrevistes</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Dades Bàsiques</h2>
+                    <p>Les estructures de dades són sistemes que desen dades en forma d'objecte a la memòria. Poden ser de dos tipus:</p>
+                    <ul>
+                        <li>Mutables: tenen dades que poden ser modificades. Són més difícils de programar</li>
+                        <li>Immutables: tenen dades que no seràn modificades</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p>A part d'aquests tipus, podem classificar les estructures de dades en aquestes categories:</p>
+                    <ul>
+                        <li>Estructures lineals: són estructures que emmagatzemen les dades seguint un ordre lineal</li>
+                        <ul>
+                            <li>Estructura estàtica: hi entra només l'Array</li>
+                            <li>Estructura dinàmica: hi entren la Queue, el Stack i la llista enllaçada</li>
+                        </ul>
+                        <li>Estructures no lineals: són l'arbre i el gràfic</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Estructures definides</h2>
+                    <p>Ara veurem cada estructura en el seu propi apartat exepte l'array que ja el conèixes</p>
+                    <h3>Llistes</h3>
+                    <p>Desa elements d'una manera ordenada i pot crear-se mitjançant un array o una llista enllaçada. La llista enllaçada és un conjunt d'elements en el que cada element té dos parts: el valor i l'adreça del següent element</p>
+                    <h3>Sets</h3>
+                    <p>Desa elements d'una manera desordenada, el valor i la key són el mateix. Canviar un valor dins d'un set realment el que farà és esborrar-lo i crear-ne un de nou. Els sets són molt ràpids, revisen a una eficiència de O(1)</p>
+                    <h3>Stacks</h3>
+                    <p>Els stacks són estructures que permeten l'acomulació de dades de manera lineal però que només es poden treure dades de l'últim element adherit</p>
+                    <h3>Queue</h3>
+                    <p>Les queues són semblants als stacks en el sentit que emmagatzemen en forma lineal i no es poden tocar el elements del mig, la diferència és que ara només podem treure dades del primer element adherit</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Estructures de dades avançades</h2>
+                    <h3>Arbres</h3>
+                    <p>Els arbres són estructures de dades complexes que desen les dades en forma d'arbre, tenint dades que actuen com a partent, altres com a childs i d'altres fent les dues coses. Aquests parents i childs estan connectats per nòduls</p>
+                    <p>Els nòduls que només fan de child també reben el nom de leaf, el quue fa només de parent és el root i els que comparteixen parent són siblings. La mida de l'arbre es determina pel nombre de nodes i l'alçada és la distància entre el leaf més llunyà i el root</p>
+                    <h3>Hash tables</h3>
+                    <p>Les hash tables són estructures que tenen una quantitat finita d'elements. Cada element té una key i un valor. Quan es vol afegir un element de fora, a aquest element se li aplica una funció que el comprimeix(el hashing) i entra dins la taula</p>
+                    <h3>Heaps</h3>
+                    <p>El heap es podria definir com una fusió entre l'arbre i la queue, i poden donar prioritat de dues maneres diferents: al valor més alt o al valor més baix</p>
+                    <h3>Gràfics</h3>
+                    <p>Els gràfics sòn estructures de dades que representen l'informació d'una manera molt visual. Es podrien categoritzar com a arbres sense una arrel definida i amb més interconnectivitat</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

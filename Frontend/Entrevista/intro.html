@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Introducció a l'entrevista</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Introducció a l'entrevista</h1>
+                <p>En aquesta part aprenem la preparació per l'entrevista i una mica de ciència computacional</p>
+                <div class="col-12 col-lg-6">
+                    <h2>L'entrevista en si</h2>
+                    <p>L'entrevista pot definir-se com una evaluació tècnica en la que es resol un problema picant codi. Un es pot preparar seguint 4 principis:</p>
+                    <ul>
+                        <li>Preparar-se per a tenir l'èxit: bàsicament preparar-se, anar a l'examen havent estudiat</li>
+                        <li>Resoldre el problema conceptualment primer: tenir un concepte de què es vol resoldre i com abans d'escriure codi. Ajudar dividir el problema en parts i resoldre cada una per separat</li>
+                        <li>Fer servir les eines adequades: no inventar coses innecessàries i utilitzar solucions ja inventades</li>
+                        <li>Optimitzar codi: fer que el codi fagi servir el mínim de recursos possible reduint tamany de codi, número de variables i bucles innecessaris, entre d'altres</li>
+                    </ul>
+                    <p>El procés d'una entrevista pot contenir aquestes fases:</p>
+                    <ul>
+                        <li>Screening: el primer pas, l'empresa coneix el treballador i el treballador ha de mostrar interès en el rol. Unes preguntes bones que pot fer el treballador seria: Quin és el rol? Quin llenguatge de programació es fa servir a l'empresa? Quins projectes es tenen en ment? Què he d'esperar del procés d'entrevistes?</li>
+                        <li>Quiz: es fan preguntes de coneixement al treballador per a conèixer el nivell tècnic</li>
+                        <li>Test en codi: es fa l'evaluació tècnica descrita abans. Es proposa un problema i el treballador l'ha de resoldre</li>
+                    </ul>
+                    <h2>Pseudocodi</h2>
+                    <p>El pseudocodi és una manera de representar codi de programació en una manera més fàcil d'entendre per a persones fent servir un llenguatge més humà</p>
+                    <p>Es fa servir per a representar la resolució d'un problema abans d'escriure el codi en si</p>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Memòria</h2>
+                    <p>La memòria total d'un ordinador està dividida en 3 memòries:</p>
+                    <ul>
+                        <li>Memòria principal: es compon per la ROM i la RAM, emmagatzema dades que es necessiten processar ràpidament</li>
+                        <li>Memòria secundària: engloba tot emmagatzematge extern, ja sigui discs durs, pen drives, el núvol... És la més lenta</li>
+                        <li>Cache: una memòria que emmagatzema instruccions per a que si la CPU les torna a necessitar estiguin a prop i per tant ho pugui fer més ràpid</li>
+                    </ul>
+                    <h2>Complexitat de temps</h2>
+                    <p>Per a evaluar quan triga un procés a executar-se no es sol fer servir temps ordinari com minuts o segons, es fan servir fòrmules que defineixen com afecta a un procés l'augment d'elements. Serien aquestes fòrmules:</p>
+                    <ul>
+                        <li>O(1): el procés sempre triga el mateix independentment del nombre d'elements</li>
+                        <li>O(n): el procés té una durada que escala al mateix nivell que el nombre d'elements</li>
+                        <li>O(log(n)): el procés escala a mida que els elements augmenten però té mètodes per a que no escali tant</li>
+                        <li>O(n^2): el temps augmenta molt a mida que s'afegeixen elements, un sol element nou duplica el temps a trigar. Un similar seria "O(n^3)" que un element nou el triplica</li>
+                    </ul>
+                    <p>Alguna manera de reduïr la complexitat seria evitar bucles innecessaris</p>
+                    <h2>Complexitat d'espai</h2>
+                    <p>A part del temps que triga un procés, s'ha de tenir en compte també l'espai que ocupa a la memòria. Per a definir la complexitat es fa servir la mateixa notació que amb la complexitat de temps</p>
+                    <p>alguna manera de reduïr la complexitat seria fer funcions simples i no crear variables innecessàries</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

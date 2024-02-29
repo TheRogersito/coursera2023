@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Algoritmes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1>Algoritmes</h1>
+                <p>En aquesta part aprenem el concepte i l'ús d'algoritmes i l'implementació en codi per a resoldre problemes</p>
+                <div class="col-12 col-lg-6">
+                    <h2>Algoritmes d'ordre</h2>
+                    <p>Els algoritmes d'ordre actúen sobre arrays i tenen l'objectiu d'ordenar-lo en ordre ascendent o descendent. Els més bàsics són:</p>
+                    <ul>
+                        <li>Selection sort: cerca en tots els elements de la llista el més petit i el canvia amb l'element en primera posició, repeteix fins que la llista està ordenada. Sol tenir una complexitat de temps de O(N^2) i una d'espai de O(1)</li>
+                        <li>Insertion sort: compara dos elements junts i els canvia de posició si el de la dreta és més petit, repeteix fins que la llista està ordenada</li>
+                        <li>Quick sort: l'algoritme selecciona l'element del mig de l'array i ho compara amb tots els elements, posa als més grans a la dreta i als més petits a l'esquerra. En aquests dos grups repeteix el procés recursivament fins que la llista està ordenada. Sol tenir una complexitat de temps de O(N log N) i una d'espai de O(N)</li>
+                    </ul>
+                    <h2>Algoritmes de cerca</h2>
+                    <p>Els algoritmes de cerca busquen elements que compleixin certes condicions. Els més bàsics serien:</p>
+                    <ul>
+                        <li>Linear search: consulta cada element de manera lineal. Té una complexitat de temps entre O(1) i O(N)</li>
+                        <li>Binary search: divideix la llista en meitats i compara si l'element cercat pot estar a un o a l'altre costat i després fa el mateix amb la meitat escollida. Repeteix fins a localitzar l'element o retorna null. Té el desavantatge que la llista ha de ser ordenada abans. Sol tenir una complexitat de temps de O(log N)</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h2>Dividir i conquerir</h2>
+                    <p>El dividir i conquerir no és exactament un algoritme, és més aviat un paradigma per a resoldre problemes. Consisteix en dividir el problema(o element) en meitats recursivament i resoldre cada petita cosa individualment. Finalment si cal, es combinen totes les solucions per a formar la solució final</p>
+                    <h2>Recursió</h2>
+                    <p>L'idea de recursió és el repetir certa acció múltiples cops fins que s'arriba a la solució. Normalment en codi es fa amb una funció que tingui un format condicional i una crida a si mateixa alterant el paràmetre</p>
+                    <h2>Programació dinàmica</h2>
+                    <p>La programació dinàmica és una manera d'optimitzar la cerca de solucions mitjançant memoització(desar resultats de problemes) i dividir els problemes en parts més petites</p>
+                    <h2>Algoritmes avars</h2>
+                    <p>Els algoritmes avars busquen sempre la solució més ràpida aparent, ignorant paràmetres que podrien donar una solució més òptima</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

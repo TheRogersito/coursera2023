@@ -1,0 +1,70 @@
+.master{
+    width:50%;
+    margin:auto;
+    margin-top: 50px;
+}
+.top{
+    height:200px;
+}
+.top div{
+    float:left
+}
+#personaPhoto{
+    aspect-ratio: 1/1;
+    max-height: 157px;
+    margin:20px;
+    border-radius:50%;
+    border:0
+}
+.image{
+    border:0
+}
+.persona{
+    max-width: 50%;
+    margin-top: 40px;
+    border:0
+}
+.expectations{
+    margin-top: 30px;
+    margin-left:3%;
+    border:0
+}
+div{
+    border:1px solid black
+}
+.table{
+margin-bottom:0px
+}
+tr th, tr td{
+    border:1px solid black
+}
+.feeling *{
+    float:left;
+    vertical-align: center;
+}
+.feeling p{
+    margin-top:25px;
+}
+#linePhoto{
+    float:right;
+    width: 88%;
+    margin:10px;
+}
+.feeling{
+    height: 125px;
+}
+.bottom *{
+    float:left;
+}
+.opportunities{
+    width:70%;
+    border:0
+}
+.todo{
+    width:25%;
+    margin-top:10px;
+    border:0
+}
+.bottom{
+    height: 125px;
+}
