@@ -16,6 +16,30 @@ header{
     color:#F0F0F0;
     padding:10px;
 }
+.buttonup{
+    background-color: #202020;
+    position: relative;
+    height:65px;
+    border-radius:10px;
+    aspect-ratio: 1/1;
+}
+.buttonup:hover{
+    background-color: #101010;
+}
+#backbutton{
+    display:flex;
+    float:left;
+    color:white;
+    text-decoration: none;
+    margin:7px 3.8% 0 3.8%;
+    padding:2px;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    max-height: 40px;
+    aspect-ratio: 1/1;
+}
 h1{
     font-size: 2.5em;
     width: max-content;
@@ -26,14 +50,9 @@ header p{
     margin:auto;
 }
 #collapbutton{
-    background-color: #202020;
-    position: relative;
     float:right;
-    width:13%;
-    aspect-ratio: 1/1;
-    margin:2% 3.8% 0 3.8%;
+    margin:7px 3.8% 0 3.8%;
     border:0;
-    border-radius:3px;
 }
 i{
     color:#F0F0F0;
